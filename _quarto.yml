@@ -6,8 +6,11 @@ book:
   title: "GF-0604 Procesamiento de datos geográficos 2025-I"
   author: "Manuel Vargas"
   date: "2025-03-10"
+
   chapters:
     - index.qmd
+    - text: "Programa del curso"
+      href: gf0604-procesamientodatosgeograficos-g001-2025-i.pdf
 
 bibliography: referencias.bib
 csl: apa-6th-edition.csl
