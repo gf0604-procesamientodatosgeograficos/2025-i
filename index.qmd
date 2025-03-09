@@ -23,17 +23,17 @@ Al finalizar el curso, el estudiantado será capaz de:
 
 El programa del curso, en el formato definido por la Escuela de Geografía de la Universidad de Costa Rica, puede accederse en:
 
-- [Programa del curso](gf0604-procesamientodatosgeograficos-g001-2025-i.pdf)
+[Programa del curso](gf0604-procesamientodatosgeograficos-g001-2025-i.pdf)
 
-# Ciclos anteriores {.unnumbered}
+# Versiones de ciclos lectivos anteriores {.unnumbered}
 
-Este sitio web corresponde al curso impartido durante el primer lectivo de 2025. Para consultar las versiones de otros años y ciclos lectivos, puede visitar:
+Este sitio web corresponde al curso impartido durante el primer lectivo de 2025. Para consultar las versiones de otros ciclos lectivos, puede visitar:
 
-- [2024-I](https://gf0604-procesamientodatosgeograficos.github.io/2024-i/)
-- [2023-I](https://gf0604-procesamientodatosgeograficos.github.io/2023-i/)
-- [2022-I](https://gf0604-procesamientodatosgeograficos.github.io/2022-i/)
-- [2021-I](https://gf0604-procesamientodatosgeograficos.github.io/2021i/)
-- [2020-I](https://geoprocesamiento-2020i.github.io/)
+[2024-I](https://gf0604-procesamientodatosgeograficos.github.io/2024-i/)  
+[2023-I](https://gf0604-procesamientodatosgeograficos.github.io/2023-i/)  
+[2022-I](https://gf0604-procesamientodatosgeograficos.github.io/2022-i/)  
+[2021-I](https://gf0604-procesamientodatosgeograficos.github.io/2021i/)  
+[2020-I](https://geoprocesamiento-2020i.github.io/)
 
 # Información de contacto {.unnumbered}
 
