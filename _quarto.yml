@@ -1,0 +1,19 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "GF-0604 Procesamiento de datos geográficos 2025-I"
+  author: "Manuel Vargas"
+  date: "2025-03-10"
+  chapters:
+    - index.qmd
+
+bibliography: referencias.bib
+csl: apa-6th-edition.csl
+
+format:
+  html:
+    lang: es
+    theme: cosmo
+    toc-expand: 5
