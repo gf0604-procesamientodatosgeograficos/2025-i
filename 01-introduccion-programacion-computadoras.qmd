@@ -371,24 +371,37 @@ El pensamiento computacional tiene cuatro principios fundamentales:
 
 ## El lenguaje de programación Scratch
 
-[Scratch](https://scratch.mit.edu/) es un lenguaje de programación orientado a educación. Su nombre proviene de la palabra en ingés [*scratching*](https://en.wikipedia.org/wiki/Scratching). Fue desarrollado en 2003 por el [MIT Media Lab](https://www.media.mit.edu/) y es administrado por la Fundación Scratch, una organización sin fines de lucro que lo facilita de manera gratuita. Es software libre que se comparte mediante una licencia [GPLv2](https://es.wikipedia.org/wiki/GNU_General_Public_License).
+[Scratch](https://scratch.mit.edu/) es un lenguaje de programación orientado a educación. Su nombre proviene de la palabra en inglés [*scratching*](https://en.wikipedia.org/wiki/Scratching). Fue desarrollado en 2003 por el [MIT Media Lab](https://www.media.mit.edu/) y es administrado por la Fundación Scratch, una organización sin fines de lucro que lo facilita de manera gratuita. Es software libre que se comparte mediante una licencia [GPLv2](https://es.wikipedia.org/wiki/GNU_General_Public_License). Se basa en bloques gráficos que se arrastran y sueltan para crear proyectos interactivos, como juegos, animaciones e historias.
 
-### Aplicación de los principios del pensamiento computacional
+### Ambiente de desarrollo
 
-1. Ingrese a la sitio web de Scratch en la dirección [https://scratch.mit.edu/](https://scratch.mit.edu/) y presione el botón *Start Creating* o *Empiezo a crear* para iniciar un proyecto (para este curso, no es necesario crear un usuario en el sitio). Se desplegará el ambiente de programación de Scratch.
+Scratch ofrece un ambiente de desarrollo en línea en la dirección [https://scratch.mit.edu/](https://scratch.mit.edu/), el cual se muestra en la @fig-scratch-ambiente-programacion.
 
-![Ambiente de programación de Scratch.](img/scratch-ambiente-programacion.png){#fig-scratch-ambiente-programacion .lightbox fig-alt="Ambiente de programación de Scratch" fig-align="center"}
+![Ambiente de desarrollo de Scratch.](img/scratch-ambiente-programacion.png){#fig-scratch-ambiente-programacion .lightbox fig-alt="Ambiente de programación de Scratch" fig-align="center"}
 
-El ambiente de programación de Scratch está compuesto por varias zonas. Seguidamente se describen algunas de las principales:
+El ambiente de desarrollo está compuesto por varias zonas o áreas. Seguidamente se describen algunas de las principales:
 
-- Un área de bloques, a la izquierda de la pantalla, los cuales ejecutan tareas: *mover*, *girar*, *ir a*, etc. Estos bloques se agrupan en secciones: *Movimiento*, *Apariencia*, *Sonido*, etc.
+- Un área de bloques, a la izquierda de la pantalla, los cuales ejecutan tareas como *mover*, *girar*, *ir a*, etc. Estos bloques son las instrucciones o comandos de Scratch. Se agrupan en secciones: *Movimiento*, *Apariencia*, *Sonido*, etc.
 - Un área en el centro de la pantalla al que pueden arrastrarse los bloques con el ratón para unirse y acoplarse.
-- Un área en la parte superior derecha de la pantalla en la que se despliega el resultado de las tareas ejecutadas por los bloques.
+- Un área en la parte superior derecha de la pantalla, llamada escenario, en la que se despliega el resultado de las tareas ejecutadas por los bloques.
+- Un área en la parte inferior derecha de la pantalla en la que se seleccionan y configuran los *sprites*. Estos son los objetos o personajes que aparecen en el escenario y que responden a instrucciones especificadas mediante bloques de código.
 - Un botón ubicado en la esquina inferior izquierda de la pantalla llamado *Agregar Extensión*. En el contexto de Scratch, una extensión es un grupo de tareas adicional a los bloques que se despliegan por defecto. Las extensiones pueden ser desarrolladas por programadores diferentes a los creadores de Scratch.
 
 **Nota**: si lo desea, puede cambiar el idioma a español, u otro de su preferencia, con la opción de menú *Settings - Language*.
 
-2. Con el bloque *decir* de la sección *Apariencia*, programe el programa "Hola Mundo" en Scratch. Utilice el evento *al presionar* de la sección *Eventos* para poder ejecutar el programa al presionar la bandera de salida.
+### Ejercicios
+
+A continuación, se proponen diferentes ejercicios de programación para ilustrar los principios de pensamiento computacional y familiarizarse con el ambiente de desarrollo de Scratch.
+
+#### Programa "Hola mundo"
+
+Para desplegar en la pantalla la hilera de texto "Hola mundo", se sugiere seguir los siguientes pasos:
+
+1. Ingrese al sitio web de Scratch y presione el botón *Start Creating* o *Crear* para iniciar un proyecto (para este curso, no es necesario crear un usuario en el sitio). Se desplegará el ambiente de programación de Scratch.
+
+2. Con el bloque *decir* de la sección *Apariencia*, despliegue la frase "Hola Mundo".
+
+3. Utilice el evento *al presionar* de la sección *Eventos* para poder ejecutar el programa al presionar la bandera de salida.
 
 ::: {#fig-scratch-hola-mundo layout-ncol=2}
 
@@ -396,40 +409,156 @@ El ambiente de programación de Scratch está compuesto por varias zonas. Seguid
 
 ![Salida](img/scratch-salida-hola-mundo.png){#fig-scratch-salida-hola-mundo}
 
-Programa "Hola mundo"
+Código fuente y salida del programa "Hola mundo"
 :::
 
-Con la opción de menú *Archivo - Guardar en tu computador*, guarde el programa en un archivo. Puede cargarlo con la opción de menú *Archivo - Subir desde tu computador*.
+4. Utilice los bloques de la extensión *Texto a voz* para que el gato pronuncie la frase "Hola mundo".
 
-3. Problema a resolver: dibujar un paisaje como el que se muestra en la figura de abajo.
+5. Con la opción de menú *Archivo - Guardar en tu computador*, guarde el programa en un archivo. Se recomienda cambiar el nombre del archivo por uno más significativo.
+
+6. Salga del sitio web de Scratch, vuelva a entrar y cargue el programa que guardó con la opción de menú *Archivo - Subir desde tu computador*.
+
+#### Dibujar un paisaje
+
+##### Problema a resolver {.unnumbered}
+
+Dibujar un paisaje como el que se muestra en la siguiente figura.
 
 ![Paisaje.](img/paisaje.png){#fig-paisaje .lightbox fig-alt="Paisaje" fig-align="center"}
+Agregue la extensión *Lápiz* y pruebe bloques como *bajar lápiz*, *subir lápiz*, *borrar todo*, *mover*, *girar*, *ir a*, *apuntar en dirección* y cualquier otro que le sea útil. Dibuje un par de figuras para familiarizarse con esos comandos.
 
-Para comenzar, dibuje un par de casas. Se sugiere agregar la extensión *Lápiz* y bloques como *bajar lápiz*, *subir lápiz*, *borrar todo*, *mover*, *girar*, *ir a*, *apuntar en dirección* y cualquier otro que le sea útil.
+##### Aplicación de principios del pensamiento computacional {.unnumbered}
 
-#### Descomposición
+Los principios del pensamiento computacional pueden aplicarse de la siguiente manera en la resolución del problema:
 
-*División de un problema en subproblemas más pequeños*
+**Descomposición**
 
-4. Identifique subproblemas en los que se pueda dividir el problema general (ej. figuras geométricas) y agrupe los bloques correspondientes a cada subproblema.
+Se identifican los siguientes subproblemas:
 
-5. Para cada subproblema, cree un bloque nuevo con *Crear un bloque* en la sección *Mis bloques*. 
+1. Dibujo de una casa.
+    a. Dibujo de la base.
+    b. Dibujo del techo.
+    
+2. Dibujo de un edificio (casa de dos pisos).
+    a. Dibujo de una base.
+    b. Dibujo de otra base.
+    c. Dibujo del techo.
+    
+**Reconocimiento de patrones**
 
-6. Utilice estructuras de control como *repetir* en la sección *Control* para realizar tareas repetitivas.
+1. Dibujar una base es lo mismo que dibujar un cuadrado (cuatro lados iguales y cuatro ángulos iguales de 90°).
+2. Dibujar un techa es lo mismo que dibujar un triángulo equilátero (tres lados iguales y tres ángulos iguales de 60°).
 
-#### Reconocimiento de patrones
-*Búsqueda de similitudes de un problema a resolver, con problemas ya resueltos*
+**Abstracción**
 
-7. Busque problemas conocidos similares a los que está resolviendo (ej. dibujos de figuras geométricas) y aplique las soluciones.
+1. Información relevante:
+    a. Valor de x.
+    b. Valor de y.
+    c. Longitud del lado de los cuadrados y triángulos.
+    
+2. Información no relevante:
+    a. Color de las figuras.
+    b. Ancho de las líneas.
+    c. Apariencia del escenario.
+    
+**Algoritmo**
 
-#### Abstracción
+El siguiente algoritmo describe paso por paso el procesamiento para llegar a una solución.
 
-*Filtrado de la información que se necesita y de la que no se necesita para resolver un problema.*
+1. Borrar la pantalla.
+2. Dibujar una casa de lado 50 en la posición (-160, 10).
+3. Dibujar una casa de lado 60 en la posición (-85, -140).
+4. Dibujar una casa de lado 75 en la posición (145, -60).
+5. Dibujar un edificio de lado 75 en la posición (10, -40).
 
-8. Identifique los elementos de información que necesita para resolver los subproblemas que ha identificado (ej. tamaños, ángulos). Trate de usarlos como entrada de los bloques que creó.
+Los dibujos de las casas y de los edificios pueden basarse en el siguiente pseudocódigo:
 
-#### Algoritmos
+```
+dibujar_casa (x, y, lado)
+  dibujar_base (x, y, lado)
+  dibujar_techo (x, y + lado, lado)
 
-*Descripción, paso por paso, de la solución a un problema.*
+dibujar_edificio (x, y, lado)
+  dibujar_base (x, y, lado)
+  dibujar_base (x, y + lado, lado)
+  dibujar_techo (x, y + lado*2, lado)
+  
+dibujar_base (x, y, lado)
+  subir_lapiz
+  ir_a (x, y)
+  apuntar_en_direccion (90)
+  bajar_lapiz
+  repetir 4 veces
+    esperar_segundos (0.5)
+    mover (lado)
+    girar_derecha (90)
+    
+dibujar_techo (x, y, lado)
+  subir_lapiz
+  ir_a (x, y)
+  bajar_lapiz
+  apuntar_en_direccion (90)
+  repetir 3 veces
+    esperar_segundos (0.5)
+    mover (lado)
+    girar_izquierda (120)
+```
 
-9. Describa un algoritmo para la solución al problema.
+#### Creación de un juego
+
+##### Problema a resolver {.unnumbered}
+
+Crear un juego sencillo en el que un personaje (por ejemplo, el gato de Scratch) deba tocar objetos (por ejemplo, manzanas) que aparecen aleatoriamente en la pantalla. Al tocar una manzana, el jugador gana un punto, la manzana se mueve a una nueva posición y el jugador continúa jugando hasta llegar a cierta puntuación (ej. 5 puntos).
+
+![Juego.](img/scratch-juego-gato-manzana.png){#fig-juego .lightbox fig-alt="Juego" fig-align="center"}
+
+##### Aplicación de principios del pensamiento computacional {.unnumbered}
+
+Los principios del pensamiento computacional pueden aplicarse de la siguiente manera en la resolución del problema:
+
+**Descomposición**
+
+Se identifican los siguientes subproblemas:
+
+1. Inicio del juego: Colocar el gato y la manzana en posiciones apropiadas e inicializar la puntuación.
+2. Movimiento del gato: Desplazar el gato con las flechas de dirección del teclado (arriba, abajo, izquierda, derecha).
+3. Detección de colisiones: Detectar cuando el gato toca la manzana.
+4. Reubicación de la manzana: Mover la manzana a una posición aleatoria en la pantalla cada vez que el gato la toque.
+5. Sistema de puntuación: Iniciar el puntaje en 0 y sumar 1 cada vez que el gato toque la manzana.
+6. Fin del juego: Terminar el juego al alcanzar la puntuación requerida.
+
+**Reconocimiento de patrones**
+
+1. El uso de las flechas de dirección del teclado es un patrón común para mover algo en la pantalla de una computadora.
+2. El sistema de puntuación acostumbra implementarse como un valor que aumenta cada vez que se cumple una condición.
+
+**Abstracción**
+
+1. Información relevante:
+    a. La posición del gato.
+    b. La posición de la manzana.
+    c. Puntuación.
+
+2. Información no relevante:
+    a. Apareciencia (color, tamaño, etc.) del gato y de la manzana.
+    b. Apariencia del escenario.
+
+**Algoritmo**
+
+El siguiente algoritmo describe paso por paso el procesamiento para llegar a una solución.
+
+1. Iniciar el juego.
+    a. Colocar el gato en el centro del escenario (x = 0, y = 0).
+    b. Colocar la manzana en una posición aleatoria.
+    c. Inicializar la variable `Puntos` en 0.
+2. Mover el gato con las flechas de dirección del teclado.
+    a. Al presionar flecha arriba, aumentar y en 10 (o la cantidad deseada).
+    b. Al presionar flecha abajo, disminuir y en 10.
+    c. Al presionar flecha derecha, aumentar x en 10.
+    d. Al presionar flecha izquierda, disminuir y en 10.
+3. Detectar colisión.
+    a. Si el gato toca la manzana, entonces:
+        - Aumentar `Puntos` en 1.
+        - Colocar la manzana en una posición aleatoria.
+4. Finalizar el juego.
+    a. Si la variable `Puntos` llega a 10 (u otra cantidad estipulada), se muestra un mensaje y se finaliza el juego.
