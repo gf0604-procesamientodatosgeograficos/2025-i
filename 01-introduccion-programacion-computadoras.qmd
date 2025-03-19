@@ -504,6 +504,10 @@ dibujar_techo (x, y, lado)
     girar_izquierda (120)
 ```
 
+##### Posible solución {.unnumbered}
+
+Puede encontrar una posible solución al problema en [https://github.com/gf0604-procesamientodatosgeograficos/2025-i/blob/main/scratch/paisaje.sb3](https://github.com/gf0604-procesamientodatosgeograficos/2025-i/blob/main/scratch/paisaje.sb3).
+
 #### Creación de un juego
 
 ##### Problema a resolver {.unnumbered}
@@ -562,3 +566,7 @@ El siguiente algoritmo describe paso por paso el procesamiento para llegar a una
         - Colocar la manzana en una posición aleatoria.
 4. Finalizar el juego.
     a. Si la variable `Puntos` llega a 10 (u otra cantidad estipulada), se muestra un mensaje y se finaliza el juego.
+    
+##### Posible solución {.unnumbered}
+
+Puede encontrar una posible solución al problema en [https://github.com/gf0604-procesamientodatosgeograficos/2025-i/blob/main/scratch/juego-gato-manzana.sb3](https://github.com/gf0604-procesamientodatosgeograficos/2025-i/blob/main/scratch/juego-gato-manzana.sb3).
