@@ -1,18 +1,22 @@
 # R - lenguaje de programación para análisis estadístico {#sec-pencom}
 
-En este capítulo se introduce el lenguaje de programación R, sus tipos de datos y sus estructuras de control.
+En este capítulo se introduce el lenguaje de programación R, sus tipos de datos, sus estructuras de control y sus funciones para generación de gráficos estadísticos.
 
 ## Resumen
 
 R es un lenguaje de programación y un entorno para graficación y análisis estadístico. Como lenguaje, es interpretado, multiplataforma, de tipado dinámico y multiparadigma. Es un proyecto de software libre que se comparte mediante una licencia GNU GPL.
 
-El código de R se estructura en funciones, las cuales se distribuyen en paquetes. Cada paquete contiene un conjunto de funciones relacionadas. Algunos paquetes están incorporados en la instalación base de R y otros deben instalarse separadamente.
+El código de R se estructura en funciones, las cuales pueden distribuirse en paquetes. Cada paquete contiene un conjunto de funciones relacionadas. Algunos paquetes están incorporados en la instalación base de R y otros deben instalarse separadamente.
+
+La instación base de R incluye una gran variedad de funciones que permiten crear gráficos estadísticos como diagramas de dispersión, histogramas y gráficos de barras, entre otros.
 
 R puede manejar diversos tipos de datos básicos, como números, textos y valores lógicos, entre otros. También tipos de datos compuestos, como factores y data frames. Al igual que otros lenguajes de programación, cuenta con estructuras de control como condicionales y ciclos.
 
 ## Trabajo previo
 
 ### Lecturas
+
+Chang, Winston (2018). *R graphics cookbook: Practical recipes for visualizing data* (2nd ed.) (capítulo 2). O’Reilly. <https://r-graphics.org/>
 
 Grolemund, G., & Wickham, H. (2014). *Hands-On Programming with R: Write Your Own Functions And Simulations* (capítulos 1 - 12). O'Reilly Media. <https://rstudio-education.github.io/hopr/>
 
@@ -49,7 +53,7 @@ Además de edición de código fuente, RStudio contiene capacidades para depurar
 
 2. Cree un usuario en [Posit Cloud](https://posit.cloud/), para así poder usar RStudio en la nube.
 
-3. Cree un programa (*script*) de R en RStudio (con la opción de menú *File - New File - R Script*) y escriba y ejecute parte del código utilizado en el capítulo anterior.
+3. Cree un programa (*script*) de R en RStudio (con la opción de menú *File - New File - R Script*) y escriba y ejecute el código utilizado en el capítulo anterior para generar un gráfico que muestre el [promedio de estatura de personas adultas por sexo](https://gf0604-procesamientodatosgeograficos.github.io/2025-i/02-introduccion-ciencia-datos.html#promedio-de-estatura-de-personas-adultas-por-sexo-1).
 
 ## Conceptos fundamentales
 
@@ -59,21 +63,62 @@ Además de edición de código fuente, RStudio contiene capacidades para depurar
 
 En R, prácticamente todo se maneja a través de objetos. Un **objeto** es cualquier entidad que se guarda en memoria y que R puede reconocer, manipular y procesar. Por ejemplo, un vector, una matriz, un data frame, una lista o incluso una función, son todos objetos en R. Los objetos en R pueden ser de muchos tipos, algunos básicos como números, caracteres y lógicos y otros compuestos como matrices y listas que permiten manejar varios valores conjuntamente.
 
-Por ejemplo, el siguiente bloque de código crea un objeto de tipo vector con el operador de asignación `<-`.
+Por ejemplo, el siguiente bloque de código crea un objeto de tipo [vector](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Vector-objects) con el operador de asignación `<-`. Un vector es una secuencia de elementos del mismo tipo.
 
 ```{r}
-#| label: ejemplo-objetos
+#| label: ejemplo-objetos-vectores
 
-# Crear un vector con elementos que van desde el 1 hasta el 10
-v <- 1:10
+# Crear un vector de números primos
+primos <- c(2, 3, 5, 7, 11)
 
-# Despliegue del vector
-v
+# Mostrar el vector
+print(primos)
 ```
 
-Una de las herramientas fundamentales en R para el manejo y análisis de datos es el [data frame](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Data-frame-objects). Un data frame es una estructura rectangular de filas y columnas, en la que cada fila corresponde a una observación y cada columna a una variable. Las columnas pueden ser de diferentes tipos: números, caracteres, lógicos y muchos otros. Un data frame puede verse como lo que comúnmente se conoce como una tabla de datos (ej. las de las hojas de cálculo). Los data frames permiten realizar operaciones sobre los datos como creación de subconjuntos, ordenamientos, filtrados, cálculos estadísticos (promedio, desviación estándar, mínimo, máximo, etc.) y muchas otras. 
+Por su parte, una matriz es una estructura de datos bidimensional en la que todos los elementos deben ser del mismo tipo, al igual que en un vector. Una matriz puede considerarse una colección de vectores organizados en filas y columnas.
 
-Los tipos y estructuras de datos de R se estudiarán con más detalle en este capítulo.
+```{r}
+#| label: ejemplo-objetos-matrices
+
+# Crear vectores
+v1 <- c(1, 2, 3)
+v2 <- c(4, 5, 6)
+
+# Combinar vectores como columnas de una matriz
+m <- cbind(v1, v2)
+
+# Mostrar la matriz
+print(m)
+```
+
+Uno de los tipos de objetos fundamentales en R para el manejo y análisis de datos es el [data frame](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Data-frame-objects). Un data frame es una estructura rectangular de filas y columnas, similar a una tabla de datos (ej. las de las hojas de cálculo), en la que cada fila corresponde a una observación y cada columna a una variable. Las columnas pueden ser de diferentes tipos: números, caracteres, lógicos y muchos otros. Las columnas (o las filas) de un data frame pueden considerarse vectores, todos del mismo tamaño.
+
+```{r}
+#| label: ejemplo-objetos-dataframes
+
+# Crear vectores
+peso <- c(70, 65, 80, 55, 90)         # en kilogramos
+estatura <- c(1.75, 1.68, 1.82, 1.60, 1.90)  # en metros
+
+# Crear dataframe
+medidas <- data.frame(peso, estatura)
+
+# Mostrar el dataframe
+print(medidas)
+```
+
+Las columnas de un data frame pueden retornarse como vectores mediante el operador `$`.
+
+```{r}
+#| label: ejemplo-objetos-dataframes-operador-dolar
+
+# Columna (vector) correspondiente a la estatura
+medidas$peso
+```
+
+Los data frames permiten realizar operaciones sobre los datos como creación de subconjuntos, ordenamientos, filtrados, cálculos estadísticos (promedio, desviación estándar, mínimo, máximo, etc.) y muchas otras. 
+
+Los vectores, las matrices y los data frames se estudiarán con más detalle en este capítulo junto con otros tipos y estructuras de datos de R.
 
 #### Conjuntos de datos para ejemplos y pruebas
 
@@ -103,8 +148,6 @@ Además, existen muchos sitios en Internet que brindan acceso a conjuntos de dat
 
 - [Kaggle - conjuntos de datos](https://www.kaggle.com/datasets)
 - [Banco Mundial - indicadores](https://data.worldbank.org/indicator)
-- [Papers with Code - conjuntos de datos](https://paperswithcode.com/datasets)
-- [Gapminder](https://www.gapminder.org/)  
 
 ### Funciones
 
@@ -163,7 +206,7 @@ setwd("C:/Users/mfvargas")
 
 #### Argumentos
 
-Los argumentos de las funciones tienen nombres que pueden especificarse, en caso de ser necesario, al llamar la función. En algunos casos, el orden y el tipo de datos de los argumentos permiten que el interpretador de R conozca cuál es cada uno, sin necesidad de escribir sus nombres.
+Los argumentos de las funciones tienen nombres que pueden especificarse, en caso de ser necesario, al llamar la función. Los nombres de los argumentos de una función pueden omitirse cuando el orden y la posición de esos argumentos son suficientes para identificarlos. Si se desea cambiar el orden o que el código sea más claro, se pueden indicar los nombres de los argumentos.
 
 En el siguiente ejemplo, se utilizan los argumentos `x`, `xlab` y `ylab` de la función [plot()](https://rdrr.io/r/graphics/plot.default.html), de la instalación básica de R, para especificar la fuente de datos y las etiquetas de los ejes `x` e `y` de un [gráfico de dispersión](https://es.wikipedia.org/wiki/Diagrama_de_dispersi%C3%B3n).
 
@@ -234,8 +277,7 @@ library(stats)
 
 Algunos paquetes están contenidos en la distribución base de R. Otros deben instalarse con la función [install.packages()](https://rdrr.io/r/utils/install.packages.html).
 
-En el siguiente ejemplo, se instala el paquete [titanic](https://cran.r-project.org/package=titanic), el cual contiene datos sobre el destino de los pasajeros durante el viaje inaugural del transatlántico [RMS Titanic](https://es.wikipedia.org/wiki/RMS_Titanic), resumida según el estatus económico (clase), sexo, edad y supervivencia de cada pasajero.
-
+En el siguiente ejemplo, se instala el paquete [titanic](https://cran.r-project.org/package=titanic), el cual contiene información sobre los pasajeros durante el viaje inaugural del transatlántico [RMS Titanic](https://es.wikipedia.org/wiki/RMS_Titanic), resumida según el estatus económico (clase), sexo, edad y supervivencia de cada pasajero.
 
 ```{r}
 #| label: funcion-install.packages
@@ -269,7 +311,7 @@ El conjunto de datos `titanic_train` puede observarse, con sus observaciones y v
 View(titanic_train)
 ```
 
-Este conjunto de datos se utiliza para entrenar modelos de [aprendizaje automático (*machine learning*)](https://es.wikipedia.org/wiki/Aprendizaje_autom%C3%A1tico) para que realicen, por ejemplo, predicciones (ej. la supervivencia o muerte de un pasajero con base en variables como edad, clase, sexo y otras). Las predicciones del modelo se evalúan con `titanic_test`, el conjunto de datos de evaluación.
+Este conjunto de datos se utiliza para entrenar modelos de [aprendizaje automático (*machine learning*)](https://es.wikipedia.org/wiki/Aprendizaje_autom%C3%A1tico) para que realicen predicciones (ej. la supervivencia o muerte de un pasajero con base en variables como edad, clase, sexo y otras). Las predicciones del modelo se evalúan con `titanic_test`, el conjunto de datos de evaluación.
 
 #### Funciones básicas de graficación estadística
 
