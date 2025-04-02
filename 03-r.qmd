@@ -456,6 +456,307 @@ hist(
 2. Muestre la distribución de pasajeros fallecidos y sobrevivientes por sexo en un gráfico de barras agrupadas.
 3. Guarde los gráficos en un archivo PDF (puede consultar [Saving plots to a file with pdf(), jpeg() and png()](https://bookdown.org/ndphillips/YaRrr/saving-plots-to-a-file-with-pdf-jpeg-and-png.html)).
 
+### Manipulación de datos
+
+En esta sección se estudian varias operaciones para manipular data frames mediante la sintaxis y las funciones base de R:
+
+- Creación de subconjuntos.
+- Ordenamiento.
+- Creación y modificación de columnas.
+- Agrupación y sumarización.
+
+Para ilustrar las operaciones, se utiliza el conjunto de datos [Netflix Movies and TV Shows](https://www.kaggle.com/datasets/shivamb/netflix-shows).
+
+```{r}
+#| label: importacion-netflix
+#| warning: false
+#| message: false
+
+# Importar el CSV desde el repositorio del curso en GitHub
+netflix <- read.csv(
+  file = "https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2025-i/refs/heads/main/datos/netflix/netflix_titles.csv"
+)
+```
+
+#### Creación de subconjuntos
+
+A esta operación se le llama también "filtrado de datos". Se implementa con la sintaxis `dataframe[filas, columnas]`.
+
+Las filas y las columnas pueden especificarse mediante vectores, como en los siguientes ejemplos.
+
+```{r}
+#| label: filtrado-01-netflix
+#| warning: false
+#| message: false
+
+# Subconjunto de las 5 primeras filas y todas las columnas
+primeras_filas <- netflix[1:5, ]
+
+# Despliegue
+print(primeras_filas)
+```
+
+```{r}
+#| label: filtrado-02-netflix
+#| warning: false
+#| message: false
+
+# Subconjunto de las 5 primeras filas y las 3 primeras columnas
+primeras_filas <- netflix[1:5, 1:3]
+
+# Despliegue
+print(primeras_filas)
+```
+
+```{r}
+#| label: filtrado-03-netflix
+#| warning: false
+#| message: false
+
+# Subconjunto de las 5 primeras filas y 
+# las columnas show_id, type, title, director y country
+primeras_filas <- netflix[
+  1:5, 
+  c("show_id", "type", "title", "director", "country")
+]
+
+# Despliegue
+print(primeras_filas)
+```
+
+Las filas a filtrar también pueden especificarse mediante expresiones lógicas.
+
+```{r}
+#| label: filtrado-04-netflix
+#| warning: false
+#| message: false
+
+# Películas dirigidas por Clint Eastwood
+eastwood <- netflix[
+  netflix$director == "Clint Eastwood", 
+  c("show_id", "type", "title", "director", "release_year")
+]
+
+# Despliegue
+print(eastwood)
+```
+
+Nótese el uso de `$` para especificar la columna y del operador de comparación `==` (igualdad).
+
+```{r}
+#| label: filtrado-05-netflix
+#| warning: false
+#| message: false
+
+# Películas dirigidas por Clint Eastwood y estrenadas a partir del año 2000
+eastwood_2000 <- netflix[
+  netflix$director == "Clint Eastwood" & netflix$release_year >= 2000, 
+  c("show_id", "type", "title", "director", "release_year")
+]
+
+# Despliegue
+print(eastwood_2000)
+```
+
+El operador lógico `&` (*AND*) especifica que ambas expresiones lógicas deben cumplirse (ser verdaderas).
+
+#### Ordenamiento
+
+La función [order()](https://rdrr.io/r/base/order.html) permite ordenar un data frame según una o varias columnas, al retornar los índices de las filas en el orden deseado.
+
+```{r}
+#| label: ordenamiento-01-netflix
+#| warning: false
+#| message: false
+
+# Ordenar las películas dirigidas por Clint Eastwood
+# por orden descendente de año de estreno
+eastwood_ordenado <- eastwood[
+  order(eastwood$release_year, decreasing = TRUE), 
+]
+
+# Despliegue
+print(eastwood_ordenado)
+```
+
+#### Creación y modificación de columnas
+
+En un data frame, una columna puede crearse o modificarse con los operadores `$` y `<-`.
+
+```{r}
+#| label: creacion-columnas-01
+#| warning: false
+#| message: false
+
+# Vector de valores de sexo
+vector_sexo <- c(
+  "mujer", "hombre", "mujer", "mujer", "mujer", "hombre", "mujer", "hombre", "hombre", "hombre"
+)
+
+# Vector de peso en kilogramos
+vector_peso_kg <- c(
+  51.0, 98.5, 91.6, 60.6, 59.1, 59.2, 65.2, 76.2, 71.6, 64.6
+)
+
+# Definir un data frame
+personas <- data.frame(
+  sexo = vector_sexo,
+  peso_kg = vector_peso_kg
+)
+
+# Agregar una nueva columna para el peso en libras
+personas$peso_lb <- personas$peso_kg * 2.205
+
+# Despliegue
+print(personas)
+```
+
+#### Agrupación y sumarización
+
+La distribución base de R permite agrupar y sumarizar datos de varias formas.
+
+Por ejemplo, la función [table()](https://rdrr.io/r/base/table.html) cuenta la cantidad de filas correspondientes a cada valor de una variable categórica.
+
+```{r}
+#| label: agrupacion-01-a
+#| warning: false
+#| message: false
+
+# Cantidad de películas o series por clasificación
+netflix_conteo_x_clasificacion <- table(netflix$rating)
+
+# Despliegue
+print(netflix_conteo_x_clasificacion)
+```
+
+La tabla que retorna `table()` puede convertirse a un data frame con la función [as.data.frame()](https://rdrr.io/r/base/as.data.frame.html) para ordenarse o procesarse de alguna otra forma.
+
+```{r}
+#| label: agrupacion-01-b
+#| warning: false
+#| message: false
+
+# Convertir a data frame
+netflix_conteo_x_clasificacion_df <- as.data.frame(
+  x = netflix_conteo_x_clasificacion
+)
+
+# Renombrar las columnas
+names(netflix_conteo_x_clasificacion_df) <- c(
+  "rating", "count"
+)
+
+# Ordenar
+netflix_conteo_x_clasificacion_df_ordenado <- netflix_conteo_x_clasificacion_df[
+  order(netflix_conteo_x_clasificacion_df$count, decreasing = TRUE),
+]
+
+# Despliegue de las 10 clasificaciones más frecuentes
+print(netflix_conteo_x_clasificacion_df_ordenado[1:10, ])
+```
+
+Por su parte, la función [aggregate()](https://rdrr.io/r/stats/aggregate.html) calcula estadísticas (ej. promedios, mínimos, máximos) para grupos formados con base en los valores de una o varias variables categóricas.
+
+```{r}
+#| label: agrupacion-02
+#| warning: false
+#| message: false
+
+# Promedio de peso en kg por sexo
+promedio_estatura_x_sexo <- aggregate(
+  data = personas,
+  peso_kg ~ sexo,
+  FUN = mean,
+  na.rm = TRUE # para eliminar valores NA (vacíos)
+)
+
+# Despliegue
+print(promedio_estatura_x_sexo)
+```
+
+La "fórmula" `peso_kg ~ sexo` se utiliza para indicar cómo se deben agrupar los datos:
+
+- El símbolo `~` se lee como "en función de".
+- A la izquierda está la variable dependiente (`peso_kg`), la que se quiere resumir o analizar.
+- A la derecha está la variable independiente (`sexo`), la que se usa para agrupar.
+
+#### Ejemplo
+
+El siguiente programa ejemplifica algunas de las funciones de manipulación de datos y graficación de la distribución base de R. En las salidas, se utilizan las funciones [pdf()](https://rdrr.io/r/grDevices/pdf.html) y [dev.off()](https://rdrr.io/cran/rasterpdf/man/dev.off.html) para almacenar los gráficos en un archivo PDF.
+
+```r
+#
+# Análisis de datos de la Encuesta Nacional de Salud y Nutrición (NHANES)
+#
+
+# ENTRADA
+
+# Importar datos de NHANES (National Health and Nutrition Examination Survey)
+nhanes <- read.csv(
+  file = "https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2025-i/refs/heads/main/datos/nchs/nhanes.csv"
+)
+
+
+# PROCESAMIENTO
+
+# 1. Obtener cantidades de personas por nivel de educación formal
+
+# Agrupar y contar por nivel de educación formal
+cantidad_x_educacion <- table(nhanes$Education)
+
+# Convertir a data frame
+cantidad_x_educacion <- as.data.frame(
+  cantidad_x_educacion
+)
+
+# Renombrar las columnas
+names(cantidad_x_educacion) <- c("educacion", "cantidad")
+
+# Ordenar por cantidad
+cantidad_x_educacion <- cantidad_x_educacion[
+  order(cantidad_x_educacion$c, decreasing = TRUE),
+]
+
+# 2. Obtener datos de estatura y peso de mujeres
+
+# Filtrar datos de estatura y peso de mujeres
+mujeres <- nhanes[nhanes$Gender == "female", c("Height", "Weight")]
+
+
+# SALIDA
+
+# Abrir archivo PDF
+pdf("analisis-nhanes-graficos.pdf", width = 12, height = 6)
+# Márgenes (arriba, izquierda, abajo, derecha)
+par(mar = c(4, 7, 4, 2))
+
+# 1. Gráfico de barras: Cantidad de personas por nivel de educación formal
+barplot(
+  height = cantidad_x_educacion$cantidad,
+  names.arg = cantidad_x_educacion$educacion,
+  main = "Cantidad de personas por nivel de educación formal",
+  xlab = "Nivel de educación formal",
+  ylab = "Cantidad de personas",
+  las = 1,
+  cex.names = 0.9,
+  col = "black"
+)
+
+# 2. Gráfico de dispersión: estatura vs. peso de mujeres
+plot(
+  x = mujeres$Height,
+  y = mujeres$Weight,
+  main = "Estatura vs. peso de mujeres",
+  xlab = "Estatura (cm)",
+  ylab = "Peso (kg)",
+  pch = 19,
+  col = "red"
+)
+
+# Cerrar archivo PDF
+dev.off()
+```
+
 ### Tipos de datos
 
 R puede trabajar con varios [tipos de datos básicos](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Basic-types), entre los que están números, caracteres (i.e. textos) y lógicos. También puede trabajar con [tipos compuestos](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Special-compound-objects), como factores y *data frames*.
