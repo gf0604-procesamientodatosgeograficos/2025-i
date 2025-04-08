@@ -228,6 +228,23 @@ div.csl-indent {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">III Herramientas para investigación reproducible y desarrollo colaborativo</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-investigacion-reproducible.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Reproducibilidad</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -661,7 +678,7 @@ Si se agregaran las siguientes variables al conjunto de datos de personas mostra
 <section id="procesos" class="level3" data-number="2.4.1">
 <h3 data-number="2.4.1" class="anchored" data-anchor-id="procesos"><span class="header-section-number">2.4.1</span> Procesos</h3>
 <p>La <a href="#fig-modelo-ciencia-datos" class="quarto-xref">Figura&nbsp;<span>2.2</span></a> ilustra el modelo de un proyecto típico de ciencia de datos, el cual incluye los procesos de importar, ordenar, transformar, visualizar, modelar y comunicar. Todos se articulan mediante <strong>programación</strong> de computadoras.</p>
-<div id="fig-modelo-ciencia-datos" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" alt="Modelo de ciencia de datos" data-fig-align="center">
+<div id="fig-modelo-ciencia-datos" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Modelo de ciencia de datos">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-modelo-ciencia-datos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="img/modelo-ciencia-datos.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figura&nbsp;2.2: Modelo de ciencia de datos. Fuente: R for Data Science."><img src="img/modelo-ciencia-datos.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Modelo de ciencia de datos"></a>
@@ -1035,6 +1052,26 @@ F-statistic: 156.5 on 1 and 573 DF,  p-value: &lt; 2.2e-16</code></pre>
 Çetinkaya-Rundel, M., &amp; Hardin, J. (2021). <em>Introduction to
 <span>Modern</span> <span>Statistics</span></em> (1st ed.). OpenIntro,
 Inc. Retrieved from <a href="https://openintro-ims.netlify.app/">https://openintro-ims.netlify.app/</a>
+</div>
+<div id="ref-gandrud_reproducible_2020" class="csl-entry" role="listitem">
+Gandrud, C. (2020). <em>Reproducible research with <span>R</span> and
+<span>RStudio</span></em> (Third edition). Boca Raton, FL: CRC Press.
+</div>
+<div id="ref-krugman_opinion_2013" class="csl-entry" role="listitem">
+Krugman, P. (2013). Opinion <span></span> <span>The</span>
+<span>Excel</span> <span>Depression</span>. <em>The New York Times</em>.
+Retrieved from <a href="https://www.nytimes.com/2013/04/19/opinion/krugman-the-excel-depression.html">https://www.nytimes.com/2013/04/19/opinion/krugman-the-excel-depression.html</a>
+</div>
+<div id="ref-peng_reproducible_2011" class="csl-entry" role="listitem">
+Peng, R. D. (2011). Reproducible <span>Research</span> in
+<span>Computational</span> <span>Science</span>. <em>Science</em>,
+<em>334</em>(6060), 1226–1227. <a href="https://doi.org/10.1126/science.1213847">https://doi.org/10.1126/science.1213847</a>
+</div>
+<div id="ref-singleton_establishing_2016" class="csl-entry" role="listitem">
+Singleton, A. D., Spielman, S., &amp; Brunsdon, C. (2016). Establishing
+a framework for <span>Open</span> <span>Geographic</span>
+<span>Information</span> science. <em>International Journal of
+Geographical Information Science</em>, <em>30</em>(8), 1507–1521. <a href="https://doi.org/10.1080/13658816.2015.1137579">https://doi.org/10.1080/13658816.2015.1137579</a>
 </div>
 <div id="ref-wickham_r_2023" class="csl-entry" role="listitem">
 Wickham, H., Çetinkaya-Rundel, M., &amp; Grolemund, G. (2023). <em>R for
@@ -1482,7 +1519,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","loop":false});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
