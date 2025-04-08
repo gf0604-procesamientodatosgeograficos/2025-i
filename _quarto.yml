@@ -22,6 +22,7 @@ book:
       chapters: 
         - 04-reproducibilidad.qmd
         - 05-markdown.qmd
+        - 06-git.qmd
 
 bibliography: referencias.bib
 csl: apa-6th-edition.csl
