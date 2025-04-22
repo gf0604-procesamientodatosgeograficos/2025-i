@@ -213,8 +213,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#tutoriales" id="toc-tutoriales" class="nav-link" data-scroll-target="#tutoriales"><span class="header-section-number">6.2.2</span> Tutoriales</a></li>
   </ul></li>
   <li><a href="#introducción" id="toc-introducción" class="nav-link" data-scroll-target="#introducción"><span class="header-section-number">6.3</span> Introducción</a></li>
-  <li><a href="#funcionamiento-de-git" id="toc-funcionamiento-de-git" class="nav-link" data-scroll-target="#funcionamiento-de-git"><span class="header-section-number">6.4</span> Funcionamiento de Git</a></li>
-  <li><a href="#recursos-de-interés" id="toc-recursos-de-interés" class="nav-link" data-scroll-target="#recursos-de-interés"><span class="header-section-number">6.5</span> Recursos de interés</a></li>
+  <li><a href="#operaciones-de-git" id="toc-operaciones-de-git" class="nav-link" data-scroll-target="#operaciones-de-git"><span class="header-section-number">6.4</span> Operaciones de Git</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">6.5</span> Ejercicios</a></li>
+  <li><a href="#recursos-de-interés" id="toc-recursos-de-interés" class="nav-link" data-scroll-target="#recursos-de-interés"><span class="header-section-number">6.6</span> Recursos de interés</a></li>
   </ul>
 </nav>
     </div>
@@ -250,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="6.2" class="anchored" data-anchor-id="trabajo-previo"><span class="header-section-number">6.2</span> Trabajo previo</h2>
 <section id="instalación-de-software" class="level3" data-number="6.2.1">
 <h3 data-number="6.2.1" class="anchored" data-anchor-id="instalación-de-software"><span class="header-section-number">6.2.1</span> Instalación de software</h3>
-<p>Instale en su computadora: <a href="https://git-scm.com/downloads">Git</a></p>
+<p>Instale en su computadora el sistema <a href="https://git-scm.com/downloads">Git</a></p>
 </section>
 <section id="tutoriales" class="level3" data-number="6.2.2">
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="tutoriales"><span class="header-section-number">6.2.2</span> Tutoriales</h3>
@@ -270,8 +271,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Git fue diseñado por Linus Torvalds en 2005 durante del desarrollo del <em>kernel</em> del sistema operativo Linux. Se caracteriza por ser un <a href="https://es.wikipedia.org/wiki/Control_de_versiones_distribuido">sistema de control de versiones distribuido</a>, lo que significa que el código fuente puede estar alojado en la estación de trabajo de cualquier miembro del equipo de desarrollo. No requiere un repositorio “central”, pero también puede trabajar de esa forma.</p>
 <p>El protocolo de Git es utilizado en varios sitios que proveen servicios de alojamiento de software, entre los que están <a href="https://sourceforge.net/">SourceForge</a>, <a href="https://bitbucket.org/">Bitbucket</a>, <a href="https://about.gitlab.com/">GitLab</a> y <a href="https://github.com/">GitHub</a>.</p>
 </section>
-<section id="funcionamiento-de-git" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="funcionamiento-de-git"><span class="header-section-number">6.4</span> Funcionamiento de Git</h2>
+<section id="operaciones-de-git" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="operaciones-de-git"><span class="header-section-number">6.4</span> Operaciones de Git</h2>
 <p>Desde el punto de vista de un usuario de Git (ej. un programador), Git se utiliza para sincronizar la versión local (i.e.&nbsp;en una computadora personal) de un conjunto de archivos, llamado proyecto o repositorio, con la versión que está alojada en un sistema remoto (ej. GitHub). Cada repositorio se almacena en un directorio (carpeta) del sistema operativo. La sincronización se realiza principalmente a través de dos operaciones:</p>
 <ul>
 <li><strong><em>push</em></strong>: para “subir” al repositorio remoto los cambios realizados en el repositorio local. Esta operación se realiza mediante el comando <a href="https://git-scm.com/docs/git-push">git push</a>. Es probable que el sistema remoto le solicite al usuario algún tipo de autenticación (ej. nombre de usuario y clave).</li>
@@ -288,21 +289,17 @@ Figura&nbsp;6.1: Operaciones <em>push</em> y <em>pull</em>. Imagen de <a href="h
 </figcaption>
 </figure>
 </div>
-<p>Antes de un <em>push</em>, el usuario debe seleccionar los archivos que desea subir mediante el comando <a href="https://git-scm.com/docs/git-add">git add</a>, el cual pasa los archivos a un “área de espera” (<em>staging area</em>). Luego debe usarse el comando <a href="https://git-scm.com/docs/git-commit">git commit</a> para “guardar” los cambios pendientes en el área de espera. Cada <em>commit</em> guarda el estado del conjunto de archivos en un momento específico (<em>snapshot</em>).</p>
-<p>La relación entre estas operaciones de Git, se ilustra en la <a href="#fig-git-push-pull-commit" class="quarto-xref">Figura&nbsp;<span>6.2</span></a>.</p>
-<div id="fig-git-push-pull-commit" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" alt="Operaciones de Git" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-git-push-pull-commit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="img/git-push-pull-commit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figura&nbsp;6.2: Operaciones de Git. Imagen de Steven Klavins."><img src="img/git-push-pull-commit.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Operaciones de Git"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-git-push-pull-commit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;6.2: Operaciones de Git. Imagen de <a href="https://medium.com/@stevenklavins94/version-control-part-4-c9387cf5b33e">Steven Klavins</a>.
-</figcaption>
-</figure>
-</div>
 </section>
-<section id="recursos-de-interés" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="recursos-de-interés"><span class="header-section-number">6.5</span> Recursos de interés</h2>
+<section id="ejercicios" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">6.5</span> Ejercicios</h2>
+<ol type="1">
+<li><p>En la interfaz de usuario de GitHub, realice un <strong><em>Fork</em></strong> (bifurcación) del repositorio <a href="https://github.com/gf0604-procesamientodatosgeograficos/2025-i-mundo-mascota">https://github.com/gf0604-procesamientodatosgeograficos/2025-i-mundo-mascota</a> a su cuenta personal. La operación <strong>fork</strong> es una copia de un repositorio a otra cuenta. Así, es posible modificar libremente el repositorio copiado, pero con la posibilidad de integrar cambios del repositorio original, o viceversa. El botón para realizar la operación <strong>fork</strong> se encuentra en la parte superior derecha de la interfaz de usuario de GitHub.</p></li>
+<li><p>Con la opción de menú de RStudio <em>File - New Project - Version Control - Git</em>, realice un <strong>clone</strong> (clonación) del repositorio que bifurcó en el paso 1 a su computadora local. La operación <strong>clone</strong> en Git (y GitHub) sirve para crear una copia completa de un repositorio que está alojado en línea, por ejemplo en GitHub, a una computadora local. Para realizar esta operación, debe haber instalado el sistema Git en su computadora.</p></li>
+<li><p>Realice cambios en el repositorio clonado, súbalos (<strong>push</strong>) a su repostorio en GitHub y publíquelos en un sitio en GitHub Pages, como en los ejercicios que realizó en el capítulo sobre Markdown.</p></li>
+</ol>
+</section>
+<section id="recursos-de-interés" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="recursos-de-interés"><span class="header-section-number">6.6</span> Recursos de interés</h2>
 <p><em>Git</em>. (s. f.). Recuperado 28 de agosto de 2022, de <a href="https://git-scm.com/">https://git-scm.com/</a></p>
 <p><em>GitHub Archive Program</em>. (s. f.). GitHub Archive Program. Recuperado 10 de abril de 2022, de <a href="https://archiveprogram.github.com/">https://archiveprogram.github.com/</a></p>
 <p>Higgins, M. (s. f.). <em>Reproducible Templates for Analysis and Dissemination</em>. Coursera. Recuperado 11 de abril de 2022, de <a href="https://www.coursera.org/learn/reproducible-templates-analysis">https://www.coursera.org/learn/reproducible-templates-analysis</a></p>
@@ -745,7 +742,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":false});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

@@ -10,10 +10,8 @@ Git es un sistema de control de versiones muy popular que trabaja en forma distr
 
 ## Trabajo previo
 
-
 ### Instalación de software
-Instale en su computadora:
-[Git](https://git-scm.com/downloads)  
+Instale en su computadora el sistema [Git](https://git-scm.com/downloads)  
 
 ### Tutoriales
 
@@ -34,7 +32,7 @@ Git fue diseñado por Linus Torvalds en 2005 durante del desarrollo del _kernel_
 
 El protocolo de Git es utilizado en varios sitios que proveen servicios de alojamiento de software, entre los que están [SourceForge](https://sourceforge.net/), [Bitbucket](https://bitbucket.org/), [GitLab](https://about.gitlab.com/) y [GitHub](https://github.com/).
 
-## Funcionamiento de Git
+## Operaciones de Git
 
 Desde el punto de vista de un usuario de Git (ej. un programador), Git se utiliza para sincronizar la versión local (i.e. en una computadora personal) de un conjunto de archivos, llamado proyecto o repositorio, con la versión que está alojada en un sistema remoto (ej. GitHub). Cada repositorio se almacena en un directorio (carpeta) del sistema operativo. La sincronización se realiza principalmente a través de dos operaciones:
 
@@ -45,11 +43,13 @@ Las operaciones _push_ y _pull_ se ilustran en la @fig-git-push-pull.
 
 ![Operaciones _push_ y _pull_. Imagen de [Melinda Higgins](https://www.coursera.org/learn/reproducible-templates-analysis/lecture/NGbQv/git-and-github-part-1).](img/git-push-pull.png){#fig-git-push-pull .lightbox fig-alt="Operaciones push y pull" fig-align="center"}
 
-Antes de un _push_, el usuario debe seleccionar los archivos que desea subir mediante el comando [git add](https://git-scm.com/docs/git-add), el cual pasa los archivos a un "área de espera" (_staging area_). Luego debe usarse el comando [git commit](https://git-scm.com/docs/git-commit) para "guardar" los cambios pendientes en el área de espera. Cada _commit_ guarda el estado del conjunto de archivos en un momento específico (_snapshot_).
+## Ejercicios
 
-La relación entre estas operaciones de Git, se ilustra en la @fig-git-push-pull-commit.
+1. En la interfaz de usuario de GitHub, realice un ***Fork*** (bifurcación) del repositorio [https://github.com/gf0604-procesamientodatosgeograficos/2025-i-mundo-mascota](https://github.com/gf0604-procesamientodatosgeograficos/2025-i-mundo-mascota) a su cuenta personal. La operación **fork** es una copia de un repositorio a otra cuenta. Así, es posible modificar libremente el repositorio copiado, pero con la posibilidad de integrar cambios del repositorio original, o viceversa. El botón para realizar la operación **fork** se encuentra en la parte superior derecha de la interfaz de usuario de GitHub.
 
-![Operaciones de Git. Imagen de [Steven Klavins](https://medium.com/@stevenklavins94/version-control-part-4-c9387cf5b33e).](img/git-push-pull-commit.png){#fig-git-push-pull-commit .lightbox fig-alt="Operaciones de Git" fig-align="center"}
+2. Con la opción de menú de RStudio *File - New Project - Version Control - Git*, realice un **clone** (clonación) del repositorio que bifurcó en el paso 1 a su computadora local. La operación **clone** en Git (y GitHub) sirve para crear una copia completa de un repositorio que está alojado en línea, por ejemplo en GitHub, a una computadora local. Para realizar esta operación, debe haber instalado el sistema Git en su computadora.
+
+3. Realice cambios en el repositorio clonado, súbalos (**push**) a su repostorio en GitHub y publíquelos en un sitio en GitHub Pages, como en los ejercicios que realizó en el capítulo sobre Markdown.
 
 ## Recursos de interés
 
