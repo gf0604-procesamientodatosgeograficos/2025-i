@@ -27,6 +27,7 @@ book:
     - part: "IV La colección de paquetes Tidyverse para ciencia de datos"
       chapters: 
         - 08-tidyverse.qmd
+        - 09-dplyr.qmd
 
 bibliography: referencias.bib
 csl: apa-6th-edition.csl
