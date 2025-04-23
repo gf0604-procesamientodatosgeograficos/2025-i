@@ -3,6 +3,7 @@
 En este capítulo se presenta Tidyverse, una colección de paquetes de R enfocados en ciencia de datos. También se introduce el concepto de datos *tidy* y el de los *pipes*, ambos fundamentales para el manejo de datos a través de Tidyverse.
 
 ## Resumen
+
 Tidyverse es una colección de paquetes de R orientados a ciencia de datos y que apoya los procesos de importación, organización, transformación, visualización, modelado y comunicación.
 
 Los paquetes de Tidyverse trabajan con datos *tidy* (i.e. ordenados, organizados), los cuales deben cumplir con tres características:
@@ -16,11 +17,13 @@ Las funciones de Tidyverse pueden encadenarse a través del operador *pipe* (tub
 ## Trabajo previo
 
 ### Lecturas
+
 Wickham, H. (2014). Tidy Data. *Journal of Statistical Software, 59*(1), 1-23. [https://doi.org/10.18637/jss.v059.i10](https://doi.org/10.18637/jss.v059.i10)
 
 Wickham, Hadley; Çetinkaya-Rundel, Mirne; & Grolemund, Garret (2023). *R for Data Science: Import, Tidy, Transform, Visualize, and Model Data* (2nd ed.). O’Reilly Media. [https://r4ds.hadley.nz/](https://r4ds.hadley.nz/) (capítulos 1 -8, 25 - 27)
 
 ## Introducción
+
 [Tidyverse](https://www.tidyverse.org/) es una colección de paquetes de R enfocados en [ciencia de datos](https://es.wikipedia.org/wiki/Ciencia_de_datos), una discipina que permite convertir datos no procesados en entendimiento, comprensión y conocimiento.
 
 La @fig-modelo-ciencia-datos ilustra el modelo de un proyecto típico de ciencia de datos, el cual incluye los procesos de importar, ordenar, transformar, visualizar, modelar y comunicar. Todos se articulan mediante **programación** de computadoras.
@@ -42,6 +45,7 @@ La @fig-modelo-ciencia-datos ilustra el modelo de un proyecto típico de ciencia
 Los paquetes de Tidyverse comparten filosofía de diseño, gramática y estructuras de datos para apoyar estos procesos del modelo de ciencia de datos. El concepto de Tidyverse fue introducido por Hadley Wickham, quien también ha programado varios de sus paquetes.
 
 ## Paquetes
+
 El núcleo de Tidyverse está compuesto por [ocho paquetes base](https://www.tidyverse.org/packages/#core-tidyverse), los cuales proveen las funcionalidades utilizadas más frecuentemente en análisis de datos:
 
 - [dplyr](https://dplyr.tidyverse.org/): gramática que proporciona un conjunto consistente de "verbos" que resuelven los retos más comunes de transformación de datos.
@@ -56,6 +60,7 @@ El núcleo de Tidyverse está compuesto por [ocho paquetes base](https://www.tid
 Hay [otros paquetes](https://www.tidyverse.org/packages/) para tareas más especifícas relacionadas con importación, limpieza y modelado de datos, entre otras. Los paquetes de Tidyverse son de los [más descargados](https://www.r-pkg.org/downloaded), entre la totalidad de paquetes del lenguaje de programación R.
 
 ## Instalación y carga
+
 Los paquetes de Tidyverse pueden instalarse con la función `install.packages()`, ya sea de manera conjunta (todos los paquetes básicos) o individualmente:
 
 ```{r}
@@ -94,6 +99,7 @@ dplyr::glimpse(iris)
 ```
 
 ## El conjunto de datos `palmerpenguins`
+
 [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/) es un [paquete de datos de R](https://cloud.r-project.org/web/packages/palmerpenguins/) ampliamente utilizado para ejemplificar funciones de exploración y visualización, como las de Tidyverse. Es muy popular en ciencia de datos en general y también está disponible para otros lenguajes de programación (ej. Python, Julia). Se utiliza como una alternativa a otros conjuntos de datos usualmente usados para ejemplos como, por ejemplo, [iris](https://rdrr.io/r/datasets/iris.html).
 
 Los datos de `palmerpenguins` fueron recolectados entre 2007 y 2009 por la Dr. Kristen Gorman y el [Programa de Investigación Ecológica de Largo Plazo (LTER) de la Estación Palmer](https://pallter.marine.rutgers.edu/). Consisten de 344 observaciones de pingüinos de tres especies, las cuales habitan en tres islas del archipiélago Palmer, en la Antártida. Para cada individuo se registraron variables como especie, sexo, masa (peso), longitud de la aleta (*flipper*), longitud del pico (*bill*) y profundidad del pico, entre otras.
@@ -125,9 +131,11 @@ El paquete contiene dos conjuntos de datos:
 `palmerpinguins` se utilizará en este capítulo, y en los siguientes, para ejemplificar varias de las funcionalidades de Tidyverse.
 
 ### Ejemplos de visualizaciones
+
 Seguidamente se muestran varios tipos de gráficos estadísticos generados con la función [ggplot()](https://ggplot2.tidyverse.org/reference/ggplot.html) del paquete `ggplot2`.
 
 #### Gráficos de dispersión
+
 Este tipo de gráficos muestra relaciones entre variables.
 
 ```{r}
@@ -164,6 +172,7 @@ penguins |>
 ```
 
 #### Histogramas
+
 Este tipo de gráficos muestra distribuciones de variables numéricas.
 
 ```{r ejemplo-palmerpenguins-03}
@@ -197,6 +206,7 @@ penguins |>
 ```
 
 #### Diagramas de caja
+
 Este tipo de gráficos muestra datos a través de sus cuartiles.
 
 ```{r}
@@ -224,6 +234,7 @@ penguins |>
 ```
 
 ## Datos *tidy*
+
 Los paquetes de Tidyverse trabajan con [datos *tidy*](https://www.jstatsoft.org/article/view/v059i10) (i.e. ordenados, organizados), un concepto también introducido por Hadley Wickham y que está relacionado con la organización de los datos en estructuras rectangulares de filas y columnas, similares a las tablas o matrices.
 
 Según Wickham, los datos *tidy* deben cumplir con tres características:
@@ -239,6 +250,7 @@ Estas características se ilustran en la @fig-datos-tidy.
 El empleo de este modelo de datos es común en todos los paquetes de Tidyverse, lo que posibilita aprender y usar sus funciones con mayor facilidad. Además, permite invertir menos esfuerzo en lidiar con diferentes modelos de datos y así dedicar más tiempo y esfuerzo en los problemas de análisis a resolver.
 
 ## *Pipes*
+
 Las funciones de Tidyverse pueden encadenarse a través del operador *pipe* (tubo), ya sea el del paquete magrittr [(%\>%)](https://magrittr.tidyverse.org/reference/pipe.html) o el del paquete base de R [(\|\>)](https://michaelbarrowman.co.uk/post/the-new-base-pipe/). Los procesos se enlazan con *pipes* para formar *pipelines* (tuberías). En este contexto, un *pipeline* consiste de una cadena de procesos conectados de forma tal que la salida de cada proceso de la cadena es la entrada del próximo. Esto permite la comunicación y sincronización entre los procesos y evita la anidación (*nesting*) de llamados a funciones.
 
 El siguiente ejemplo implementa un *pipeline* de dos funciones de Tidyverse:
@@ -271,4 +283,5 @@ El uso de *pipes* permite un funcionamiento homogéneo de las funciones de Tidyv
 3.  El resultado es un nuevo data frame.
 
 ## Recursos de interés
+
 Canelón, S. (s.f.). *Slides \| Silvia Canelón---An Antarctic Tour of the Tidyverse*. Recuperado 16 de octubre de 2022, de <https://slides.silviacanelon.com/tour-of-the-tidyverse-v2/#/title-slide>
