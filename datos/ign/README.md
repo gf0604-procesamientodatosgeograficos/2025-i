@@ -60,6 +60,19 @@ ogr2ogr \
     "cantones_2020.geojson"
 ```
 
+### Cantones 2020 simplificados
+
+```bash
+# Simplificar las geometrías ≈11 m de tolerancia en el ecuador
+ogr2ogr \
+    -makevalid \
+    -t_srs EPSG:4326 \
+    -simplify 0.0001 \
+    -nln cantones \
+    "cantones-2020-simplificados.gpkg" \
+    "cantones-2020.gpkg"
+```
+
 ### Distritos
 
 ```bash
