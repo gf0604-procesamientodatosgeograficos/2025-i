@@ -34,7 +34,6 @@ ogr2ogr \
     -nln provincias \
     "provincias.gpkg" \
     WFS:"https://geos.snitcr.go.cr/be/IGN_5_CO/wfs" "IGN_5_CO:limiteprovincial_5k"
-
 ```
 
 ### Cantones
@@ -47,7 +46,18 @@ ogr2ogr \
     -nln cantones \
     "cantones.gpkg" \
     WFS:"https://geos.snitcr.go.cr/be/IGN_5_CO/wfs" "IGN_5_CO:limitecantonal_5k"
+```
 
+### Cantones 2020
+
+```bash
+# Convertir de GeoJSON a GPKG
+ogr2ogr \
+    -makevalid \
+    -t_srs EPSG:4326 \
+    -nln cantones \
+    "cantones-2020.gpkg" \
+    "cantones_2020.geojson"
 ```
 
 ### Distritos
@@ -60,5 +70,5 @@ ogr2ogr \
     -nln distritos \
     "distritos.gpkg" \
     WFS:"https://geos.snitcr.go.cr/be/IGN_5_CO/wfs" "IGN_5_CO:limitedistrital_5k"
-
 ```
+
