@@ -253,6 +253,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">V Graficación estadística en R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-ggplot2-plotly.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">ggplot2 y plotly - creación declarativa de gráficos interactivos</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">VI El ecosistema espacial de R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-introduccion-manejo-datos-geoespaciales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introducción al manejo de datos geoespaciales con R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-operaciones-datos-atributos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Operaciones con datos de atributos</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -326,7 +366,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="introducción" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="introducción"><span class="header-section-number">8.3</span> Introducción</h2>
 <p><a href="https://www.tidyverse.org/">Tidyverse</a> es una colección de paquetes de R enfocados en <a href="https://es.wikipedia.org/wiki/Ciencia_de_datos">ciencia de datos</a>, una discipina que permite convertir datos no procesados en entendimiento, comprensión y conocimiento.</p>
-<p>La <a href="#fig-modelo-ciencia-datos" class="quarto-xref">Figura&nbsp;<span>8.1</span></a> ilustra el modelo de un proyecto típico de ciencia de datos, el cual incluye los procesos de importar, ordenar, transformar, visualizar, modelar y comunicar. Todos se articulan mediante <strong>programación</strong> de computadoras.</p>
+<p>La <a href="#fig-modelo-ciencia-datos" class="quarto-xref">Figura&nbsp;<span class="quarto-unresolved-ref">fig-modelo-ciencia-datos</span></a> ilustra el modelo de un proyecto típico de ciencia de datos, el cual incluye los procesos de importar, ordenar, transformar, visualizar, modelar y comunicar. Todos se articulan mediante <strong>programación</strong> de computadoras.</p>
 <div id="fig-modelo-ciencia-datos" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Modelo de ciencia de datos">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-modelo-ciencia-datos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -546,7 +586,7 @@ $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setos
 <li>Cada observación debe tener su propia fila.</li>
 <li>Cada valor debe tener su propia celda.</li>
 </ol>
-<p>Estas características se ilustran en la <a href="#fig-datos-tidy" class="quarto-xref">Figura&nbsp;<span>8.2</span></a>.</p>
+<p>Estas características se ilustran en la <a href="#fig-datos-tidy" class="quarto-xref">Figura&nbsp;<span class="quarto-unresolved-ref">fig-datos-tidy</span></a>.</p>
 <div id="fig-datos-tidy" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Datos tidy">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-datos-tidy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1058,7 +1098,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","loop":false,"closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

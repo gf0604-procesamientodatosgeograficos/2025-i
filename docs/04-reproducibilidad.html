@@ -231,6 +231,52 @@ div.csl-indent {
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tidyverse - colección de paquetes para ciencia de datos</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-dplyr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">dplyr - gramática para manipulación de datos</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">V Graficación estadística en R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-ggplot2-plotly.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">ggplot2 y plotly - creación declarativa de gráficos interactivos</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">VI El ecosistema espacial de R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-introduccion-manejo-datos-geoespaciales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introducción al manejo de datos geoespaciales con R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-operaciones-datos-atributos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Operaciones con datos de atributos</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -290,10 +336,10 @@ div.csl-indent {
 </section>
 <section id="introducción" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="introducción"><span class="header-section-number">4.3</span> Introducción</h2>
-<p>La <a href="https://es.wikipedia.org/wiki/Reproducibilidad_y_repetibilidad">reproducibilidad</a> es la capacidad de un ensayo o experimento de ser reproducido por otros, en particular, por la comunidad científica. Más formalmente, en investigación cuantitativa, un análisis se considera reproducible si <em>“el código fuente y los datos utilizados por un investigador para llegar a un resultado están disponibles y son suficientes para que otro investigador, trabajando de manera independiente, pueda llegar al mismo resultado”</em> <span class="citation" data-cites="gandrud_reproducible_2020">(<a href="02-introduccion-ciencia-datos.html#ref-gandrud_reproducible_2020" role="doc-biblioref">Gandrud, 2020</a>)</span>.</p>
-<p>La reproducibilidad, junto con la <a href="https://es.wikipedia.org/wiki/Falsabilidad">falsabilidad</a>, es uno de los pilares del <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_cient%C3%ADfico">método científico</a>. Sin embargo, en años recientes, se ha generado una creciente preocupación debido a que muchos estudios científicos publicados fallan las pruebas de reproducibilidad, dando lugar a una <a href="https://es.wikipedia.org/wiki/Crisis_de_replicaci%C3%B3n">crisis de reproducibilidad o replicabilidad</a> en varias ciencias <span class="citation" data-cites="krugman_opinion_2013">(<a href="02-introduccion-ciencia-datos.html#ref-krugman_opinion_2013" role="doc-biblioref">Krugman, 2013</a>)</span>.</p>
+<p>La <a href="https://es.wikipedia.org/wiki/Reproducibilidad_y_repetibilidad">reproducibilidad</a> es la capacidad de un ensayo o experimento de ser reproducido por otros, en particular, por la comunidad científica. Más formalmente, en investigación cuantitativa, un análisis se considera reproducible si <em>“el código fuente y los datos utilizados por un investigador para llegar a un resultado están disponibles y son suficientes para que otro investigador, trabajando de manera independiente, pueda llegar al mismo resultado”</em> <span class="citation" data-cites="gandrud_reproducible_2020">(<a href="#ref-gandrud_reproducible_2020" role="doc-biblioref">Gandrud, 2020</a>)</span>.</p>
+<p>La reproducibilidad, junto con la <a href="https://es.wikipedia.org/wiki/Falsabilidad">falsabilidad</a>, es uno de los pilares del <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_cient%C3%ADfico">método científico</a>. Sin embargo, en años recientes, se ha generado una creciente preocupación debido a que muchos estudios científicos publicados fallan las pruebas de reproducibilidad, dando lugar a una <a href="https://es.wikipedia.org/wiki/Crisis_de_replicaci%C3%B3n">crisis de reproducibilidad o replicabilidad</a> en varias ciencias <span class="citation" data-cites="krugman_opinion_2013">(<a href="#ref-krugman_opinion_2013" role="doc-biblioref">Krugman, 2013</a>)</span>.</p>
 <p>El concepto de reproducibilidad es cada vez más importante debido, entre otras razones, al aumento exponencial de datos disponibles y a la aplicación de la programación de computadoras, para procesar estos datos, por parte de especialistas de muchas disciplinas.</p>
-<p>Alex Singleton y otros autores han identificado los siguientes retos para la reproducibilidad en ciencia de datos geoespaciales <span class="citation" data-cites="singleton_establishing_2016">(<a href="02-introduccion-ciencia-datos.html#ref-singleton_establishing_2016" role="doc-biblioref">Singleton, Spielman, &amp; Brunsdon, 2016</a>)</span>:</p>
+<p>Alex Singleton y otros autores han identificado los siguientes retos para la reproducibilidad en ciencia de datos geoespaciales <span class="citation" data-cites="singleton_establishing_2016">(<a href="#ref-singleton_establishing_2016" role="doc-biblioref">Singleton, Spielman, &amp; Brunsdon, 2016</a>)</span>:</p>
 <ol type="1">
 <li>Los datos deben ser de dominio público y estar disponibles para los investigadores.</li>
 <li>El software utilizado debe ser de código abierto (<em>open source</em>) y estar disponible para ser revisado.</li>
@@ -301,7 +347,7 @@ div.csl-indent {
 <li>El proceso de <a href="https://es.wikipedia.org/wiki/Revisi%C3%B3n_por_pares">revisión por pares (<em>peer review process</em>)</a> y la publicación académica deben requerir la presentación de un modelo de flujo de trabajo e idealmente la disponibilidad de los materiales necesarios para la replicación.</li>
 <li>En los casos en los que la reproducibilidad total no sea posible (ej. datos sensibles), los investigadores deben esforzarse por incluir todos los aspectos que puedan de un marco de trabajo abierto.</li>
 </ol>
-<p>En general, el estándar mínimo de reproducibilidad requiere que los datos y el código fuente estén disponibles para otros investigadores <span class="citation" data-cites="peng_reproducible_2011">(<a href="02-introduccion-ciencia-datos.html#ref-peng_reproducible_2011" role="doc-biblioref">Peng, 2011</a>)</span>. Sin embargo, dependiendo de las circunstancias y recursos disponibles, existe todo un espectro de posibilidades, que se ilustra en la <a href="#fig-espectro-reproducibilidad" class="quarto-xref">Figura&nbsp;<span>4.1</span></a>.</p>
+<p>En general, el estándar mínimo de reproducibilidad requiere que los datos y el código fuente estén disponibles para otros investigadores <span class="citation" data-cites="peng_reproducible_2011">(<a href="#ref-peng_reproducible_2011" role="doc-biblioref">Peng, 2011</a>)</span>. Sin embargo, dependiendo de las circunstancias y recursos disponibles, existe todo un espectro de posibilidades, que se ilustra en la <a href="#fig-espectro-reproducibilidad" class="quarto-xref">Figura&nbsp;<span class="quarto-unresolved-ref">fig-espectro-reproducibilidad</span></a>.</p>
 <div id="fig-espectro-reproducibilidad" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Imagen del espectro de reproducibilidad">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-espectro-reproducibilidad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -326,7 +372,7 @@ Figura&nbsp;4.1: Espectro de reproducibilidad. Imagen de <a href="https://www.yo
 <p>Para dar mantenimiento, tanto al código fuente como a la documentación, es necesario un sistema de <a href="https://es.wikipedia.org/wiki/Control_de_versiones">control de versiones</a> como <a href="https://es.wikipedia.org/wiki/Git">Git</a>, el cual permite llevar el registro de los cambios en archivos y también facilita el trabajo colaborativo al reunir las modificaciones hechas por varias personas. Git es usado en varias plataformas que comparten código fuente (ej. <a href="https://github.com/">GitHub</a>, <a href="https://about.gitlab.com/">GitLab</a>) y que ofrecen servicios relacionados, como hospedaje de sitios web.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-gandrud_reproducible_2020" class="csl-entry" role="listitem">
 Gandrud, C. (2020). <em>Reproducible research with <span>R</span> and <span>RStudio</span></em> (Third edition). Boca Raton, FL: CRC Press.
 </div>
@@ -776,7 +822,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":false,"openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","loop":false});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

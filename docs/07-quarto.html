@@ -245,6 +245,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tidyverse - colección de paquetes para ciencia de datos</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-dplyr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">dplyr - gramática para manipulación de datos</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">V Graficación estadística en R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-ggplot2-plotly.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">ggplot2 y plotly - creación declarativa de gráficos interactivos</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">VI El ecosistema espacial de R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-introduccion-manejo-datos-geoespaciales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introducción al manejo de datos geoespaciales con R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-operaciones-datos-atributos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Operaciones con datos de atributos</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -392,8 +438,8 @@ format:
 </section>
 <section id="cómo-funciona-quarto" class="level2" data-number="7.5">
 <h2 data-number="7.5" class="anchored" data-anchor-id="cómo-funciona-quarto"><span class="header-section-number">7.5</span> ¿Cómo funciona Quarto?</h2>
-<p>Quarto se apoya en <a href="https://yihui.org/knitr/">knitr</a> y en <a href="http://pandoc.org/">Pandoc</a>. knitr ejecuta el código en R (u otro lenguaje) y convierte los documentos a Markdown. Por su parte, Pandoc exporta los documentos Markdown al formato de salida deseado (ej. HTML, PDF, MS Word, MS PowerPoint). Este proceso se ilustra en la <a href="#fig-quarto-knitr-pandoc" class="quarto-xref">Figura&nbsp;<span>7.1</span></a>.</p>
-<div id="fig-quarto-knitr-pandoc" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Conversión de un documento Quarto (.qmd) a su formato de salida">
+<p>Quarto se apoya en <a href="https://yihui.org/knitr/">knitr</a> y en <a href="http://pandoc.org/">Pandoc</a>. knitr ejecuta el código en R (u otro lenguaje) y convierte los documentos a Markdown. Por su parte, Pandoc exporta los documentos Markdown al formato de salida deseado (ej. HTML, PDF, MS Word, MS PowerPoint). Este proceso se ilustra en la <a href="#fig-quarto-knitr-pandoc" class="quarto-xref">Figura&nbsp;<span class="quarto-unresolved-ref">fig-quarto-knitr-pandoc</span></a>.</p>
+<div id="fig-quarto-knitr-pandoc" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" alt="Conversión de un documento Quarto (.qmd) a su formato de salida" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-quarto-knitr-pandoc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="img/rstudio-qmd-how-it-works.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figura&nbsp;7.1: Conversión de un documento Quarto (.qmd) a su formato de salida. Imagen de quarto.org."><img src="img/rstudio-qmd-how-it-works.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Conversión de un documento Quarto (.qmd) a su formato de salida"></a>
@@ -862,7 +908,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
