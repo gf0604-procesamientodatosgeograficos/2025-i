@@ -666,6 +666,11 @@ Si lo desea, puede utilizar datos de otra zona o país y de otro grupo taxonómi
 - [Natural Earth](https://www.naturalearthdata.com/) (datos geoespaciales de países, división territorial administrativa y otros)
 - [WorldClim](https://www.worldclim.org/) (datos geoespaciales de clima)
 
+**Puede encontrar una posible solución al problema en:**
+
+- **Repositorio con el código fuente: [https://github.com/gf0604-procesamientodatosgeograficos/2025-i-analisis-distribucion-felidos](https://github.com/gf0604-procesamientodatosgeograficos/2025-i-analisis-distribucion-felidos)**
+- **Sitio web publicado: [https://gf0604-procesamientodatosgeograficos.github.io/2025-i-analisis-distribucion-felidos/](https://gf0604-procesamientodatosgeograficos.github.io/2025-i-analisis-distribucion-felidos/)**
+
 ## Recursos de interés
 
 Bivand, R. (2022). *CRAN Task View: Analysis of Spatial Data*. <https://CRAN.R-project.org/view=Spatial>

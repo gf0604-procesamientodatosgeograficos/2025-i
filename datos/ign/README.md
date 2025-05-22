@@ -36,6 +36,19 @@ ogr2ogr \
     WFS:"https://geos.snitcr.go.cr/be/IGN_5_CO/wfs" "IGN_5_CO:limiteprovincial_5k"
 ```
 
+### Provincias simplificadas
+
+```bash
+# Simplificar las geometrías ≈11 m de tolerancia en el ecuador
+ogr2ogr \
+    -makevalid \
+    -t_srs EPSG:4326 \
+    -simplify 0.0001 \
+    -nln provincias \
+    "provincias-simplificadas.gpkg" \
+    "provincias.gpkg"
+```
+
 ### Cantones
 
 ```bash
