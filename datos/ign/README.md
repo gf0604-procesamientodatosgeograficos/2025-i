@@ -61,6 +61,19 @@ ogr2ogr \
     WFS:"https://geos.snitcr.go.cr/be/IGN_5_CO/wfs" "IGN_5_CO:limitecantonal_5k"
 ```
 
+### Cantones simplificados
+
+```bash
+# Simplificar las geometrías ≈11 m de tolerancia en el ecuador
+ogr2ogr \
+    -makevalid \
+    -t_srs EPSG:4326 \
+    -simplify 0.0001 \
+    -nln cantones \
+    "cantones-simplificados.gpkg" \
+    "cantones.gpkg"
+```
+
 ### Cantones 2020
 
 ```bash
