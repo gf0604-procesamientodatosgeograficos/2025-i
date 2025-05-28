@@ -35,6 +35,7 @@ book:
       chapters:
         - 11-introduccion-manejo-datos-geoespaciales.qmd
         - 12-operaciones-datos-atributos.qmd
+        - 13-operaciones-datos-espaciales.qmd
 bibliography: referencias.bib
 csl: apa-6th-edition.csl
 
