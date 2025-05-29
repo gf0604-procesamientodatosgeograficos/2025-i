@@ -151,5 +151,49 @@
       "VI El ecosistema espacial de R",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Operaciones con datos de atributos</span>"
     ]
+  },
+  {
+    "objectID": "13-operaciones-datos-espaciales.html",
+    "href": "13-operaciones-datos-espaciales.html",
+    "title": "13  Operaciones con datos espaciales",
+    "section": "",
+    "text": "13.1 Resumen\nLas operaciones espaciales, tales como las basadas en relaciones topológicas (ej. intersección, traslape, contención, cobertura), en el caso de los datos vectoriales, y el álgebra de mapas, en el caso de los datos raster, constituyen un componente esencial del procesamiento de datos geoespaciales. Varias de las operaciones con datos de atributos estudiadas en el capítulo anterior tienen contrapartes espaciales.\nLas operaciones espaciales para datos vectoriales incluyen creación de subconjuntos espaciales, unión de datos espaciales, agregación de datos espaciales y relaciones de distancia, entre otras. Por su parte, las operaciones espaciales para datos raster incluyen creación de subconjuntos espaciales y álgebra de mapas, entre otras.",
+    "crumbs": [
+      "VI El ecosistema espacial de R",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Operaciones con datos espaciales</span>"
+    ]
+  },
+  {
+    "objectID": "13-operaciones-datos-espaciales.html#trabajo-previo",
+    "href": "13-operaciones-datos-espaciales.html#trabajo-previo",
+    "title": "13  Operaciones con datos espaciales",
+    "section": "13.2 Trabajo previo",
+    "text": "13.2 Trabajo previo\n\n13.2.1 Lecturas\nLovelace, R., Nowosad, J., & Münchow, J. (2019). Geocomputation with R (capítulo 4). CRC Press. https://geocompr.robinlovelace.net/",
+    "crumbs": [
+      "VI El ecosistema espacial de R",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Operaciones con datos espaciales</span>"
+    ]
+  },
+  {
+    "objectID": "13-operaciones-datos-espaciales.html#carga-de-bibliotecas",
+    "href": "13-operaciones-datos-espaciales.html#carga-de-bibliotecas",
+    "title": "13  Operaciones con datos espaciales",
+    "section": "13.3 Carga de bibliotecas",
+    "text": "13.3 Carga de bibliotecas\n\n# Cargar bibliotecas\nlibrary(tidyverse)\nlibrary(DT)\nlibrary(sf)\nlibrary(terra)\nlibrary(tmap)",
+    "crumbs": [
+      "VI El ecosistema espacial de R",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Operaciones con datos espaciales</span>"
+    ]
+  },
+  {
+    "objectID": "13-operaciones-datos-espaciales.html#carga-de-datos",
+    "href": "13-operaciones-datos-espaciales.html#carga-de-datos",
+    "title": "13  Operaciones con datos espaciales",
+    "section": "13.4 Carga de datos",
+    "text": "13.4 Carga de datos\n\n13.4.1 Cantones de Costa Rica\nEste archivo proviene de un geoservicio de tipo Web Feature Service (WFS) publicado por el Instituto Geográfico Nacional (IGN). Las geometrías se simplificaron para reducir el tamaño del archivo.\nArchivo GPKG de cantones de Costa Rica para mayo de 2025 (con geometrías simplificadas)\n\n\nCódigo para cargar datos de cantones\n# Cargar datos de cantones de Costa Rica\ncantones &lt;- st_read(\n  \"https://github.com/gf0604-procesamientodatosgeograficos/2025-i/raw/refs/heads/main/datos/ign/cantones-simplificados.gpkg\",\n  quiet = TRUE\n)\n\n\n\n\n13.4.2 Registros de presencia de félidos de Costa Rica\nEste archivo, con registros de presencia de especies silvestres de la familia Felidae en Costa Rica, proviene de una consulta al portal de datos de la Infraestructura Mundial de Información en Biodiversidad (GBIF).\nArchivo CSV de registros de presencia de félidos silvestres de Costa Rica\n\n\nCódigo para cargar datos de félidos\n# Lectura de un archivo CSV con registros de presencia de félidos en Costa Rica\nfelidos &lt;- st_read(\n  \"https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2025-i/refs/heads/main/datos/gbif/felidos.csv\",\n  options = c(\n    \"X_POSSIBLE_NAMES=decimalLongitude\", # columna de longitud decimal\n    \"Y_POSSIBLE_NAMES=decimalLatitude\"   # columna de latitud decimal\n  ),\n  quiet = TRUE\n)\n\n# Asignar CRS WGS84\nst_crs(felidos) &lt;- 4326\n\n\n\nCódigo para generar el mapa de cantones y registros de presencia de félidos\n# Crear columna con el enlace a los detalles del registro original\nfelidos &lt;- felidos |&gt;\n  mutate(\n    registro = paste0(\n      \"&lt;a href='\", occurrenceID,\n      \"' target='_blank'&gt;Detalle&nbsp;del&nbsp;registro&lt;/a&gt;\"\n    )\n  )\n\n# Especificar el modo interactivo\ntmap_mode(\"view\")\n\n# Definir el mapa de cantones y registros de félidos\nmapa_cantones_felidos &lt;-\n  \n  # Centro y nivel inicial de zoom\n  tm_view(\n    set_view = c(lon = -84.2, lat = 9.6, zoom = 7)\n  ) +\n  \n  # Capas base\n  tm_basemap(c(\"OpenStreetMap\", \"Esri.WorldImagery\")) +\n  \n  # Capa de cantones (polígonos)\n  tm_shape(cantones, name = \"Cantones\") +\n  tm_borders() +\n  \n  # Capa de félidos (puntos)\n  tm_shape(felidos, name = \"Félidos\") +\n  tm_dots(\n    fill = \"species\",\n    fill.scale = tm_scale(values = \"brewer.set1\"),  # paleta Set1\n    fill.legend = tm_legend(title = \"Especie\"),     # título de la leyenda\n    \n    # Otras propiedades visuales\n    size = 0.5,\n    id = \"species\",\n    popup.vars = c(\n      \"Localidad\" = \"locality\",\n      \"Fecha\" = \"eventDate\",\n      \"Fuente\" = \"institutionCode\",\n      \"Registro\"  = \"registro\" # enlace al detalle del registro de presencia\n    ),\n    popup.format = list(html.escape = FALSE) # para hacer \"clicables\" los enlaces HTML \n  ) +\n  \n  # Definir la escala gráfica\n  tm_scalebar(position = c(\"left\", \"bottom\"))\n\n# Mostrar el mapa\nmapa_cantones_felidos",
+    "crumbs": [
+      "VI El ecosistema espacial de R",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Operaciones con datos espaciales</span>"
+    ]
   }
 ]
