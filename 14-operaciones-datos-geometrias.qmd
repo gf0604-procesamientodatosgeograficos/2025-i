@@ -488,4 +488,88 @@ mapa <-
 mapa
 ```
 
+## Datos raster
 
+### Extracción de valores raster
+
+La extracción de valores raster es el proceso de identificar y retornar los valores asociados con una capa raster en localizaciones específicas, generalmente determinadas por objetos vectoriales, ya sean puntos, líneas o polígonos. En el paquete terra, la extracción se implementa a través de la función [extract()](https://rdrr.io/cran/terra/man/extract.html).
+
+
+```{r}
+#| label: carga-datos-temperatura
+#| warning: false
+#| message: false
+
+# Cargar datos de temperatura media anual
+temperatura <- rast(
+  "https://github.com/gf0604-procesamientodatosgeograficos/2025-i/raw/refs/heads/main/datos/worldclim/temperatura.tif"
+)
+
+# Desplegar datos
+plot(temperatura)
+```
+
+**Rangos de temperaturas de especies**
+
+El siguiente bloque de código obtiene los rangos de temperatura media anual del [mono congo (*Alouatta palliata*)](https://es.wikipedia.org/wiki/Alouatta_palliata):
+
+```{r}
+#| label: rango-temperatura-congo
+
+# Filtrado de registros de congos
+congos <- 
+  mamiferos |>
+  filter(species == "Alouatta palliata")
+
+# Columna con la temperatura de cada registro de congos con base en la capa raster de altitud
+congos$temperatura <- terra::extract(temperatura, congos)
+
+# Temperatura promedio del hábitat del congo
+temperatura_congo_promedio <- mean(congos$temperatura$temperatura, na.rm = TRUE)
+
+# Temperatura mínima del hábitat del congo
+temperatura_congo_minima <- min(congos$temperatura$temperatura, na.rm = TRUE)
+
+# Temperatura máxima del hábitat del congo
+temperatura_congo_maxima <- max(congos$temperatura$temperatura, na.rm = TRUE)
+```
+
+El siguiente mapa muestra el rango de temperatura del mono congo:
+
+```{r}
+#| label: mapa-rango-temperatura-congo
+#| warning: false
+#| message: false
+
+# Crear una máscara con TRUE en celdas dentro del rango
+rango_temperatura_congo <- temperatura >= temperatura_congo_minima & temperatura <= temperatura_congo_maxima
+
+# Aplicar la máscara al raster de temperatura
+mapa_rango_temperatura_congo <- mask(temperatura, rango_temperatura_congo, maskvalue = 0)
+
+# Crear paleta de rojos
+paleta_rojos <- colorRampPalette(c("blue", "yellow", "red"))
+
+# Visualizar solo las celdas dentro del rango
+plot(
+  mapa_rango_temperatura_congo,
+  col = paleta_rojos(100),
+  xlim = c(-86.0, -82.3),
+  ylim = c(8.0, 11.3),
+  main = "Rango de temperatura del mono congo"
+)
+
+# Registros de presencia de congos
+plot(congos, 
+  add = TRUE, 
+  pch = 20, 
+  col = "black", 
+  cex = 0.7
+)
+```
+
+**Ejercicios**
+
+1. Obtenga el rango de precipitación anual para el mono congo y genere el mapa correspondiente. Use los datos de precipitación en https://github.com/gf0604-procesamientodatosgeograficos/2025-i/raw/refs/heads/main/datos/worldclim/precipitacion.tif.
+
+2. Genere los mapas de rangos de temperatura y precipitación para la [musaraña del Chirripó (*Cryptotis gracilis*)](https://es.wikipedia.org/wiki/Cryptotis_gracilis).
