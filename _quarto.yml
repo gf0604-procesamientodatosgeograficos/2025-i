@@ -37,6 +37,9 @@ book:
         - 12-operaciones-datos-atributos.qmd
         - 13-operaciones-datos-espaciales.qmd
         - 14-operaciones-datos-geometrias.qmd
+    - part: "VII Visualización avanzada de datos"
+      chapters:
+        - 15-tableros-control.qmd
 bibliography: referencias.bib
 csl: apa-6th-edition.csl
 
