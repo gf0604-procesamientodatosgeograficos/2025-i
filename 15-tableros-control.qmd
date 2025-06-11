@@ -8,19 +8,20 @@ Un tablero de control presenta diversas visualizaciones de datos (tablas, gráfi
 
 ### Lecturas
 
-Quarto - Quarto Dashboards. (s.f.). <https://quarto.org/docs/dashboards/>
+Quarto - Quarto Dashboards. (s.f.). <https://quarto.org/docs/dashboards/>  
+Quarto - Dashboard Layout. (s.f.). <https://quarto.org/docs/dashboards/layout.html>
 
 ## Introducción
 
-Un [tablero de control](https://es.wikipedia.org/wiki/Cuadro_de_mando), también llamado cuadro de mando o *dashboard*, es un tipo de interfaz gráfica de usuario que reúne visualizaciones de datos e información resumida relevantes para una temática, objetivo o proceso particular. Estas visualizaciones se presentan principalmente en formato de tablas, gráficos estadísticos y mapas (ej. [Tablero de control de la Universidad Johns Hopkins sobre la epidemia de Covid-19](https://www.arcgis.com/apps/dashboards/bda7594740fd40299423467b48e9ecf6)). El término *dashboard* proviene del tablero de instrumentos de un automóvil, el cual le permite al conductor monitorear rápidamente las funciones principales del vehículo.
+Un [tablero de control](https://es.wikipedia.org/wiki/Cuadro_de_mando), también llamado cuadro de mando o *dashboard*, es un tipo de interfaz gráfica de usuario que reúne visualizaciones de datos e información resumida relevantes para una temática, objetivo o proceso particular. Estas visualizaciones se presentan principalmente en formato de tablas, gráficos estadísticos y mapas. El término *dashboard* hace referencia al tablero de indicadores de un automóvil, el cual le permite al conductor monitorear rápidamente las funciones principales del vehículo (velocidad, combustible, etc.).
 
 Los tableros de control son usualmente accesibles mediante un navegador web y pueden estar vinculados a fuentes de datos que se actualizan regularmente. Se caracterizan por ser interactivos y facilitar la exploración de datos a los usuarios.
 
-Quarto facilita el desarrollo de tableros de control a través de [Quarto Dashboards](https://quarto.org/docs/dashboards/.
+Quarto facilita el desarrollo de tableros de control a través de [Quarto Dashboards](https://quarto.org/docs/dashboards/).
 
 ## Quarto Dashboards
 
-[Quarto Dashboards](https://quarto.org/docs/dashboards/) es una capacidad de Quarto (introducida en la versión 1.4) que permite crear tableros de control mediante los lenguajes de programación R, Python, Julia y Observable. Estos tableros de control pueden incluir componentes desarrollados en DT, Ggplot2, Plotly y Leaflet, entre otros paquetes de R. Pueden publicarse como páginas estáticas (ej. en GitHub Pages) o en un [servidor Shiny para proporcionar mayor interactividad al usuario](https://quarto.org/docs/dashboards/interactivity/).
+[Quarto Dashboards](https://quarto.org/docs/dashboards/) es una capacidad de Quarto que permite crear tableros de control mediante los lenguajes de programación R, Python, Julia y Observable. Estos tableros de control pueden incluir componentes desarrollados en DT, Ggplot2, Plotly y Leaflet, entre otros paquetes de R. Pueden publicarse como páginas estáticas (ej. en GitHub Pages) o en un [servidor Shiny para proporcionar mayor interactividad al usuario](https://quarto.org/docs/dashboards/interactivity/).
 
 La @fig-dashboards-gapminder muestra un tablero de control desarrollado con Quarto Dashboards.
 
@@ -49,6 +50,7 @@ Todos los tableros de control tienen una barra de navegación que muestra el tí
 Dentro de una página, los componentes del tablero de control se organizan mediante conjuntos alternos de filas y columnas. Las filas y columnas, a su vez, se definen mediante encabezados de Markdown y celdas computacionales (bloques de código).
 
 #### Páginas
+
 Para introducir múltiples páginas, se utilizan encabezados de nivel 1 sobre los encabezados de nivel 2, los cuales se usan para definir filas y columnas. El texto de los encabezados de nivel 1 se usa para enlazar a las páginas en la barra de navegación.
 
 #### Pestañas
@@ -60,6 +62,13 @@ Las pestañas (*tabs*) se utilizan para incluir múltiples vistas de datos o con
 Las tarjetas son la unidad fundamental de visualización en un tablero de control. Constituyen el contenido de las filas y las columnas.
 
 Para más información sobre la configuración de los tableros de control, se recomienda consultar [Dashboard Layout](https://quarto.org/docs/dashboards/layout.html).
+
+## Ejemplo
+
+El siguiente es un tablero de control relacionado con el [Atlas de Desarrollo Humano Cantonal 2024](https://www.undp.org/es/costa-rica/publicaciones/atlas-de-desarrollo-humano-cantonal-2024).
+
+- [Tablero de control publicado en GitHub Pages](https://gf0604-procesamientodatosgeograficos.github.io/2025-i-atlas-desarrollo-humano/)
+- [Código fuente](https://github.com/gf0604-procesamientodatosgeograficos/2025-i-atlas-desarrollo-humano)
 
 ## Recursos adicionales
 

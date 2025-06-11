@@ -308,7 +308,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#componentes" id="toc-componentes" class="nav-link" data-scroll-target="#componentes"><span class="header-section-number">15.4.1</span> Componentes</a></li>
   <li><a href="#configuración" id="toc-configuración" class="nav-link" data-scroll-target="#configuración"><span class="header-section-number">15.4.2</span> Configuración</a></li>
   </ul></li>
-  <li><a href="#recursos-adicionales" id="toc-recursos-adicionales" class="nav-link" data-scroll-target="#recursos-adicionales"><span class="header-section-number">15.5</span> Recursos adicionales</a></li>
+  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo"><span class="header-section-number">15.5</span> Ejemplo</a></li>
+  <li><a href="#recursos-adicionales" id="toc-recursos-adicionales" class="nav-link" data-scroll-target="#recursos-adicionales"><span class="header-section-number">15.6</span> Recursos adicionales</a></li>
   </ul>
 </nav>
     </div>
@@ -342,18 +343,19 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="15.2" class="anchored" data-anchor-id="trabajo-previo"><span class="header-section-number">15.2</span> Trabajo previo</h2>
 <section id="lecturas" class="level3" data-number="15.2.1">
 <h3 data-number="15.2.1" class="anchored" data-anchor-id="lecturas"><span class="header-section-number">15.2.1</span> Lecturas</h3>
-<p>Quarto - Quarto Dashboards. (s.f.). <a href="https://quarto.org/docs/dashboards/" class="uri">https://quarto.org/docs/dashboards/</a></p>
+<p>Quarto - Quarto Dashboards. (s.f.). <a href="https://quarto.org/docs/dashboards/" class="uri">https://quarto.org/docs/dashboards/</a><br>
+Quarto - Dashboard Layout. (s.f.). <a href="https://quarto.org/docs/dashboards/layout.html" class="uri">https://quarto.org/docs/dashboards/layout.html</a></p>
 </section>
 </section>
 <section id="introducción" class="level2" data-number="15.3">
 <h2 data-number="15.3" class="anchored" data-anchor-id="introducción"><span class="header-section-number">15.3</span> Introducción</h2>
-<p>Un <a href="https://es.wikipedia.org/wiki/Cuadro_de_mando">tablero de control</a>, también llamado cuadro de mando o <em>dashboard</em>, es un tipo de interfaz gráfica de usuario que reúne visualizaciones de datos e información resumida relevantes para una temática, objetivo o proceso particular. Estas visualizaciones se presentan principalmente en formato de tablas, gráficos estadísticos y mapas (ej. <a href="https://www.arcgis.com/apps/dashboards/bda7594740fd40299423467b48e9ecf6">Tablero de control de la Universidad Johns Hopkins sobre la epidemia de Covid-19</a>). El término <em>dashboard</em> proviene del tablero de instrumentos de un automóvil, el cual le permite al conductor monitorear rápidamente las funciones principales del vehículo.</p>
+<p>Un <a href="https://es.wikipedia.org/wiki/Cuadro_de_mando">tablero de control</a>, también llamado cuadro de mando o <em>dashboard</em>, es un tipo de interfaz gráfica de usuario que reúne visualizaciones de datos e información resumida relevantes para una temática, objetivo o proceso particular. Estas visualizaciones se presentan principalmente en formato de tablas, gráficos estadísticos y mapas. El término <em>dashboard</em> hace referencia al tablero de indicadores de un automóvil, el cual le permite al conductor monitorear rápidamente las funciones principales del vehículo (velocidad, combustible, etc.).</p>
 <p>Los tableros de control son usualmente accesibles mediante un navegador web y pueden estar vinculados a fuentes de datos que se actualizan regularmente. Se caracterizan por ser interactivos y facilitar la exploración de datos a los usuarios.</p>
-<p>Quarto facilita el desarrollo de tableros de control a través de <a href="#quarto-dashboards">Quarto Dashboards</a>(https://quarto.org/docs/dashboards/.</p>
+<p>Quarto facilita el desarrollo de tableros de control a través de <a href="https://quarto.org/docs/dashboards/">Quarto Dashboards</a>.</p>
 </section>
 <section id="quarto-dashboards" class="level2" data-number="15.4">
 <h2 data-number="15.4" class="anchored" data-anchor-id="quarto-dashboards"><span class="header-section-number">15.4</span> Quarto Dashboards</h2>
-<p><a href="https://quarto.org/docs/dashboards/">Quarto Dashboards</a> es una capacidad de Quarto (introducida en la versión 1.4) que permite crear tableros de control mediante los lenguajes de programación R, Python, Julia y Observable. Estos tableros de control pueden incluir componentes desarrollados en DT, Ggplot2, Plotly y Leaflet, entre otros paquetes de R. Pueden publicarse como páginas estáticas (ej. en GitHub Pages) o en un <a href="https://quarto.org/docs/dashboards/interactivity/">servidor Shiny para proporcionar mayor interactividad al usuario</a>.</p>
+<p><a href="https://quarto.org/docs/dashboards/">Quarto Dashboards</a> es una capacidad de Quarto que permite crear tableros de control mediante los lenguajes de programación R, Python, Julia y Observable. Estos tableros de control pueden incluir componentes desarrollados en DT, Ggplot2, Plotly y Leaflet, entre otros paquetes de R. Pueden publicarse como páginas estáticas (ej. en GitHub Pages) o en un <a href="https://quarto.org/docs/dashboards/interactivity/">servidor Shiny para proporcionar mayor interactividad al usuario</a>.</p>
 <p>La <a href="#fig-dashboards-gapminder" class="quarto-xref">Figura&nbsp;<span>15.1</span></a> muestra un tablero de control desarrollado con Quarto Dashboards.</p>
 <div id="fig-dashboards-gapminder" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Tablero de control desarrollado con Quarto Dashboards">
 <figure class="quarto-float quarto-float-fig figure">
@@ -400,8 +402,16 @@ Figura&nbsp;15.1: Tablero de control desarrollado con Quarto Dashboards. Fuente:
 </section>
 </section>
 </section>
-<section id="recursos-adicionales" class="level2" data-number="15.5">
-<h2 data-number="15.5" class="anchored" data-anchor-id="recursos-adicionales"><span class="header-section-number">15.5</span> Recursos adicionales</h2>
+<section id="ejemplo" class="level2" data-number="15.5">
+<h2 data-number="15.5" class="anchored" data-anchor-id="ejemplo"><span class="header-section-number">15.5</span> Ejemplo</h2>
+<p>El siguiente es un tablero de control relacionado con el <a href="https://www.undp.org/es/costa-rica/publicaciones/atlas-de-desarrollo-humano-cantonal-2024">Atlas de Desarrollo Humano Cantonal 2024</a>.</p>
+<ul>
+<li><a href="https://gf0604-procesamientodatosgeograficos.github.io/2025-i-atlas-desarrollo-humano/">Tablero de control publicado en GitHub Pages</a></li>
+<li><a href="https://github.com/gf0604-procesamientodatosgeograficos/2025-i-atlas-desarrollo-humano">Código fuente</a></li>
+</ul>
+</section>
+<section id="recursos-adicionales" class="level2" data-number="15.6">
+<h2 data-number="15.6" class="anchored" data-anchor-id="recursos-adicionales"><span class="header-section-number">15.6</span> Recursos adicionales</h2>
 <p><a href="https://www.youtube.com/watch?v=_VGJIPRGTy4">Quarto Dashboards | Charles Teague | Posit</a><br>
 <a href="https://quarto.org/docs/gallery/#dashboards">Ejemplos de tableros de control desarrollados con Quarto Dashboards</a></p>
 
@@ -839,7 +849,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"openEffect":"zoom","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":false,"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
