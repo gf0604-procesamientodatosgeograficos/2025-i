@@ -70,6 +70,10 @@ El siguiente es un tablero de control relacionado con el [Atlas de Desarrollo Hu
 - [Tablero de control publicado en GitHub Pages](https://gf0604-procesamientodatosgeograficos.github.io/2025-i-atlas-desarrollo-humano/)
 - [Código fuente](https://github.com/gf0604-procesamientodatosgeograficos/2025-i-atlas-desarrollo-humano)
 
+**Ejercicio**  
+
+Agregue al mapa la capa raster de densidad de población de Costa Rica compartida por [WorldPop](https://www.worldpop.org/) en [https://data.worldpop.org/GIS/Population/Global_2021_2022_1km_UNadj/unconstrained/2022/CRI/](https://data.worldpop.org/GIS/Population/Global_2021_2022_1km_UNadj/unconstrained/2022/CRI/).
+
 ## Recursos adicionales
 
 [Quarto Dashboards | Charles Teague | Posit](https://www.youtube.com/watch?v=_VGJIPRGTy4)  
